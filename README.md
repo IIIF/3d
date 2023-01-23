@@ -3,6 +3,8 @@ This repository contains issues recording discussions and progress on tasks for 
 
 ## Relevant Links ##
 
+- [Working group charter](http://iiif.io/community/groups/3d/)
+- [Spreadsheet of collected user stories](https://docs.google.com/spreadsheets/d/1_kt5THS8M1T_nth16VG1PaM6If6CRewBioJ3zFW_CbQ/edit#gid=1028387312)
 - [Slides for 2021 Annual Conference Community Groups Update: 3D](https://docs.google.com/presentation/d/16Yi2ETQdo8kmEHxzJDa_0XWmUTIyfM3k_AaBYHCyBbM/edit?usp=sharing)
 - [Slides for 2020 IIIF Fall Working Meeting Community Groups Update: 3D](https://docs.google.com/presentation/d/1ysDKOxbWGBnkElSd0xVsUX84UxUfF95Zc-TYhioTaqE/edit#slide=id.g773d5934ba_0_93)
 - [Google Form 3D User Stories Response Log](https://docs.google.com/spreadsheets/d/1_kt5THS8M1T_nth16VG1PaM6If6CRewBioJ3zFW_CbQ/edit#gid=1028387312)
