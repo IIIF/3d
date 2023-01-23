@@ -4,6 +4,12 @@ This document lists and details simple technical demo harnesses created to aid e
 
 As of 1/23/2023, these demos most specifically attempt to address the task described by [Issue 17: Demo harness: 3+ viewers using a common JSON annotation format](https://github.com/IIIF/3d/issues/17) and the user story described by [Issue 14: Annotate displayed 3D models with commentary](https://github.com/IIIF/3d/issues/14).
 
+- [Aleph](#aleph)
+- [Google Model Viewer](#google-model-viewer)
+- [Sketchfab](#sketchfab)
+- [Smithsonian Voyager](#smithsonian-voyager)
+- [X3D](#x3d)
+
 ## The Demos
 
 ### Aleph
@@ -126,7 +132,7 @@ JSON
 
 ### X3D
 
-Currently, this demo loads one of the annotations describes in [#17](https://github.com/IIIF/3d/issues/17) programattically, without an external JSON file.
+Currently, this demo loads one of the annotations described in [#17](https://github.com/IIIF/3d/issues/17) programattically, without an external JSON file.
 
 [Link to the demo](https://codesandbox.io/s/interesting-colden-ectroz)
 
