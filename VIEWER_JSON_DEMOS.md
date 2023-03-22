@@ -132,7 +132,7 @@ JSON
 
 ### X3D
 
-This demo loads one of the annotations described in [#17](https://github.com/IIIF/3d/issues/17).
+This demo loads annotation JSON object described in [#17](https://github.com/IIIF/3d/issues/17#issuecomment-1370034033) , with the modification that the position and normal coordinate are given as JSON array of numeric value rather than a string. A revised implementation of this demo could accommodate either form of the coordinate data.
 
 [Link to the demo](https://codesandbox.io/p/github/vincentmarchetti/x3d-remote-annotation/main)
 
