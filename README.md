@@ -14,3 +14,4 @@ This repository contains issues recording discussions and progress on tasks for 
 - [IIIF Canvas and Scene Ideas](https://docs.google.com/document/d/1LnLaYFE7ksNb7Tk2wf8yfw1nmTpW1Hy58E41f__DS18/edit?usp=sharing)
 - Some example existing 3D IIIF Presentation API manifest links: [MorphoSource gorilla skull](https://www.morphosource.org/manifests/8ff57219-27ff-4ccd-95bc-eb7cbe195539), [Royal Pavilion & Museums mounted greenfinch](https://www.rpm-api.io/records/5e7de766317ed200177bdeb7?_format=iiif), [British Library Jane Austen's writing desk](https://bl-3d.netlify.app/collection/jane-austen-writing-desk/index.json)
 - [Viewer JSON Demos](https://github.com/IIIF/3d/blob/main/VIEWER_JSON_DEMOS.md)
+- [Glossary of Terms](https://docs.google.com/document/d/1wCtQxbfr9xV6CenaN88OfZbCc5RxgLx-r_vzO0OHodc/edit)
