@@ -136,8 +136,27 @@ This demo loads annotation JSON object described in [#17](https://github.com/III
 
 [Link to the demo](https://codesandbox.io/p/github/vincentmarchetti/x3d-remote-annotation/main)
 
+JSON
+```
+[
+    {
+        "id": 0,
+        "normal": [0.292,  0.114,  0.949],
+        "position": [0.017,  1.806,  0.3409 ],
+        "value": "visor"
+    },
+    {
+        "id": 1,
+        "normal": [0.471, 0.056, 0.8802 ],
+        "position": [0.5176, 0.9556, 0.1219],
+        "value": "glove"
+    }
+]
+```
+
 
 ## Changelog
 
 - 1/23/2023: Created this document to better record and track content evolving in [Issue #17](https://github.com/IIIF/3d/issues/17).
 - 3/21/2023: Update status and link of the X3D demo
+- 4/18/2023: Add JSON used in X3D demo
