@@ -1,4 +1,4 @@
-# 3D Community Group TSG Working Space
+# IIIF 3D TSG Working Space
 This repository contains issues recording discussions and progress on tasks for the [IIIF 3D Community Group](https://iiif.io/community/groups/3d/).
 
 ## Relevant Links ##
