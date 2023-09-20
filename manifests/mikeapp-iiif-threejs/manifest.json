@@ -1,0 +1,283 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "https://example.org/iiif/3d/manifest",
+  "type": "Manifest",
+  "label": { "en": ["mikeapp demo"] },
+  "items": [
+    {
+      "id": "https://example.org/iiif/scene1/page/p1/1",
+      "type": "Scene",
+      "label": { "en": ["A Scene"] },
+      "items": [
+        {
+          "id": "https://example.org/iiif/scene1/page/p1/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/iiif/3d/anno4",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "MetStatue-2022.glb",
+                    "type": "Model",
+                    "format": "application/glb"
+                  }
+                ],
+                "transforms": [
+                  {
+                    "type": "ScaleTransform",
+                    "x": 50.0,
+                    "y": 50.0,
+                    "z": 50.0
+                  },
+                  {
+                    "type": "RotationTransform",
+                    "x": 0.0,
+                    "y": 90.0,
+                    "z": 0.0
+                  }
+                ]
+              },
+              "target": [
+                {
+                  "type": "SpecificResource",
+                  "source": [
+                    {
+                      "id": "https://example.org/iiif/scene1/page/p1/1",
+                      "type": "Scene"
+                    }
+                  ],
+                  "selector": [
+                    {
+                      "type": "PointSelector",
+                      "x": 0.0,
+                      "y": -25.0,
+                      "z": 100.0
+                    }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "id": "https://example.org/iiif/3d/anno5",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "MetSarc-2023-03.glb",
+                    "type": "Model",
+                    "format": "application/glb"
+                  }
+                ],
+                "transforms": [
+                  {
+                    "type": "ScaleTransform",
+                    "x": 70.0,
+                    "y": 70.0,
+                    "z": 70.0
+                  },
+                  {
+                    "type": "RotationTransform",
+                    "x": 0.0,
+                    "y": 90.0,
+                    "z": 0.0
+                  }
+                ]
+              },
+              "target": [
+                {
+                  "type": "SpecificResource",
+                  "source": [
+                    {
+                      "id": "https://example.org/iiif/scene1/page/p1/1",
+                      "type": "Scene"
+                    }
+                  ],
+                  "selector": [
+                    {
+                      "type": "PointSelector",
+                      "x": 130.0,
+                      "y": -25.0,
+                      "z": 120.0
+                    }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "id": "https://example.org/iiif/3d/anno6",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "augustus.glb",
+                    "type": "Model",
+                    "format": "application/glb"
+                  }
+                ],
+                "transforms": [
+                  {
+                    "type": "ScaleTransform",
+                    "x": 0.07,
+                    "y": 0.07,
+                    "z": 0.07
+                  }
+                ]
+              },
+              "target": [
+                {
+                  "type": "SpecificResource",
+                  "source": [
+                    {
+                      "id": "https://example.org/iiif/scene1/page/p1/1",
+                      "type": "Scene"
+                    }
+                  ],
+                  "selector": [
+                    {
+                      "type": "PointSelector",
+                      "x": 30.0,
+                      "y": -20.0,
+                      "z": 110.0
+                    }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "id": "https://example.org/iiif/3d/anno7",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "venus.glb",
+                    "type": "Model",
+                    "format": "application/glb"
+                  }
+                ],
+                "transforms": [
+                  {
+                    "type": "ScaleTransform",
+                    "x": 0.05,
+                    "y": 0.05,
+                    "z": 0.05
+                  }
+                ]
+              },
+              "target": [
+                {
+                  "type": "SpecificResource",
+                  "source": [
+                    {
+                      "id": "https://example.org/iiif/scene1/page/p1/1",
+                      "type": "Scene"
+                    }
+                  ],
+                  "selector": [
+                    {
+                      "type": "PointSelector",
+                      "x": -40.0,
+                      "y": -110.0,
+                      "z": 110.0
+                    }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "id": "https://example.org/iiif/3d/anno8",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/camera/1",
+                    "type": "Camera",
+                    "fieldOfView": 50.0
+                  }
+                ],
+                "transforms": [
+                  {
+                    "type": "RotationTransform",
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  }
+                ]
+              },
+              "target": [
+                {
+                  "type": "SpecificResource",
+                  "source": [
+                    {
+                      "id": "https://example.org/iiif/scene1/page/p1/1",
+                      "type": "Scene"
+                    }
+                  ],
+                  "selector": [
+                    {
+                      "type": "PointSelector",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 500.0
+                    }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "id": "https://example.org/iiif/3d/anno9",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/light/1",
+                    "type": "Light",
+                    "color": "white",
+                    "intensity": 0.2
+                  }
+                ]
+              },
+              "target": [
+                {
+                  "type": "SpecificResource",
+                  "source": [
+                    {
+                      "id": "https://example.org/iiif/scene1/page/p1/1",
+                      "type": "Scene"
+                    }
+                  ],
+                  "selector": [
+                    {
+                      "type": "PointSelector",
+                      "x": 20.0,
+                      "y": 20.0,
+                      "z": 1000.0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
