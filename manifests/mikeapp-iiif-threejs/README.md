@@ -1,0 +1,1 @@
+This manifest is used by the [Threejs Test Application](https://github.com/mikeapp/iiif-threejs) created by Michael Appleby.
