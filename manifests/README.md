@@ -1,0 +1,1 @@
+This folder will contain work-in-progress draft sketches of potential JSON IIIF Presentation API specification manifest documents that describe 3D resources. These sketches represent actualized examples of what possible changes to the IIIF Presentation API specification could produce and support.  
