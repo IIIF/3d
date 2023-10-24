@@ -1,0 +1,1 @@
+This asset was originally obtained from https://sketchfab.com/3d-models/venus-de-milo-statuestexturingchallenge-smk-2983d92ac4e744f485492580ca7629f2. The asset was created by the National Gallery of Denmark (SMK) and is licensed CC0.
