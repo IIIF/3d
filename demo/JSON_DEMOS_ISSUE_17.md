@@ -1,14 +1,20 @@
-# 3D Viewer JSON Demos
+# 3D Viewer JSON Demos For Issue 17
 
-This document lists and details simple technical demo harnesses created to aid experimentation with IIIF 3D tests and concepts. For initial work relating to supporting the [core user story Issues](https://github.com/IIIF/3d/issues?q=is%3Aopen+is%3Aissue+label%3A%22core+user+story%22), the TSG determined a good starting point would be the creation and iterative refinement of simple code sandbox demos utilizing shared common JSON manifests of 3D content (annotations, etc.) to be displayed. Each demo includes a link to the demo using Code Sandbox. 
+This document was specifically relevant to repository issue #17, which represented an attempt to demonstrate feasibility of 3D IIIF principles by expressing a single simplistic JSON set of annotations in multiple viewers. Herein are listed simple technical demo harnesses that fulfill the acceptance criteria of #17. That story was completed and has been closed. This is not the most up to date document describing how 3D TSG members should work together to push new demo experiments forward to help propel the goals of the TSG. Instead, users should see [IIIF draft manifest experiments](EXPERIMENTS.md)
+
+For initial work relating to supporting the [core user story Issues](https://github.com/IIIF/3d/issues?q=is%3Aopen+is%3Aissue+label%3A%22core+user+story%22), the TSG determined a good starting point would be the creation and iterative refinement of simple code sandbox demos utilizing shared common JSON manifests of 3D content (annotations, etc.) to be displayed. Each demo includes a link to the demo using Code Sandbox. 
 
 As of 6/13/2023, these demos specifically address the task described by [Issue 17: Demo harness: 3+ viewers using a common JSON annotation format](https://github.com/IIIF/3d/issues/17) supporting the user story [Issue 14: Annotate displayed 3D models with commentary](https://github.com/IIIF/3d/issues/14).
 
-- [Aleph](#aleph)
-- [Google Model Viewer](#google-model-viewer)
-- [Sketchfab](#sketchfab)
-- [Smithsonian Voyager](#smithsonian-voyager)
-- [X3D](#x3d)
+- [3D Viewer JSON Demos For Issue 17](#3d-viewer-json-demos-for-issue-17)
+  - [Label Annotation JSON](#label-annotation-json)
+  - [The Demos](#the-demos)
+    - [Aleph](#aleph)
+    - [Google Model Viewer](#google-model-viewer)
+    - [Sketchfab](#sketchfab)
+    - [Smithsonian Voyager](#smithsonian-voyager)
+    - [X3D](#x3d)
+  - [Changelog](#changelog)
 
 ## Label Annotation JSON
 
