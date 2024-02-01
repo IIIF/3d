@@ -1,9 +1,10 @@
 {
   "@context": "http://iiif.io/api/presentation/4/context.json",
-  "id": "https://example.org/iiif/3d/model_position.json",
+  "id": "https://example.org/iiif/3d/model_origin.json",
   "type": "Manifest",
-  "label": { "en": ["Single Positioned Model"] },
-  "summary": { "en": ["Viewer should render the model at (-1,0,1), and then viewer should add default lighting and camera"] },
+  "label": { "en": ["Single Model with background color"] },
+  "summary": { "en": ["Viewer should render the model at the origin, with a background color of purple"] },
+  "backgroundColor": "#FF00FF",
   "items": [
     {
       "id": "https://example.org/iiif/scene1/page/p1/1",
@@ -22,23 +23,7 @@
                 "id": "https://github.com/IIIF/3d/raw/main/assets/astronaut/astronaut.glb",
                 "type": "Model"
               },
-              "target": {
-                "type": "SpecificResource",
-                "source": [
-                  {
-                    "id": "https://example.org/iiif/scene1/page/p1/1",
-                    "type": "Scene"
-                  }
-                ],
-                "selector": [
-                  {
-                    "type": "PointSelector",
-                    "x": -1.0,
-                    "y": 0.0,
-                    "z": 1.0
-                  }
-                ]
-              }
+              "target": "https://example.org/iiif/scene1/page/p1/1"
             }
           ]
         }
