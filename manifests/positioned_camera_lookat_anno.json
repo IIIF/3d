@@ -8,7 +8,7 @@
     {
       "id": "https://example.org/iiif/scene1/page/p1/1",
       "type": "Scene",
-  "label": { "en": ["Model with Explicit Camera"] },
+  "label": { "en": ["Model with Camera looking at point"] },
   "summary": { "en": ["Viewer should render the model at the scene origin, and the camera at the scene origin facing -Z, then add default lighting"] },
 
       "items": [
@@ -27,15 +27,35 @@
               "target": "https://example.org/iiif/scene1/page/p1/1"
             },
             {
-              "id": "https://example.org/iiif/3d/anno1",
+              "id": "https://example.org/iiif/3d/anno2",
               "type": "Annotation",
               "motivation": ["painting"],
               "body": {
                 "id": "https://example.org/iiif/3d/cameras/1",
                 "type": "PerspectiveCamera",
-                "label": {"en": ["Perspective Camera 1"]}
+                "label": {"en": ["Perspective Camera 1"]},
+                "lookAt": {
+                  "id": "https://example.org/iiif/3d/anno1",
+                  "type": "Annotation"
+                }
               },
-              "target": "https://example.org/iiif/scene1/page/p1/1"
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 0.0,
+                    "y": 3.0,
+                    "z": -10.0
+                  }
+                ]
+              }
             }
           ]
         }
