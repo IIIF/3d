@@ -53,7 +53,7 @@
                     "format": "application/glb"
                   }
                 ],
-                "transform": [
+                "transform" [
                   {
                     "type": "ScaleTransform",
                     "x": 2.0,

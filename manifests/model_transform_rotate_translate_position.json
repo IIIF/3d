@@ -27,7 +27,7 @@
                     "format": "application/glb"
                   }
                 ],
-                "transforms": [
+                "transform": [
                   {
                     "type": "RotateTransform",
                     "x": 0.0,
