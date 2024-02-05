@@ -5,96 +5,6 @@
 
 Idea - split the spec into "vocabulary" and "model" ala Web Annos
 
-New Classes
-* Scene
-
-describe handedness
-
-Properties:
-  * backgroundColor  (+canvas) rgb string ; default viewer choice
-
-* [Camera]
-  * PerspectiveCamera
-  * OrthographicCamera
-
-
-[note null for orbiting]
-Properties:
- * lookAt reference to an annotation, or a point selector ; null
- * near float ; default viewer choice
- * far float ; default viewer choice
-
-PerspectiveCamera:
-  * fieldOfView float; default viewer choice
-
-* [Light]
-  * AmbientLight
-  * DirectionalLight
-  * PointLight
-  * SpotLight
-
-Properties:
- * color rbg string case insensitive; white
- * intensity Value instance ; default viewer choice; only unit:relative 
-  
-Directional/Spot:
- * lookAt (same as for cameras)
-
-
-(Pull back into 4.0)
-
-* Physical Dimensions (nolongeraservice) on Canvas and Scene
-
-* SpecificResource
-  * Style
-  * RefinedBy
-  * Choice
-
-* [Selector]
-  * PointSelector  -- add `z` property, clarify `t`, check language about non-existent dimensions
-  * PolygonZSelector
-  * FragmentSelector -- show refineBy of PointSelector
-
-* [Transform]
-  * ScaleTransform
-  * RotationTransform
-  * TranslateTransform
-
-Need to double check the effects of translate then scale vs scale then translate
-
-
-
-Properties:
-  * x float ; 0 for Rotation/Translate / 1.0 for Scale
-  * y float ; 0 for Rotation/Translate / 1.0 for Scale
-  * z float ; 0 for Rotation/Translate / 1.0 for Scale
-
-* Value
-
-```
-{
- "intensity": {"type": "Value", "value": 0.5, "unit": "relative"}
-}
-```
-
-Properties:
- * value float, required, no default
- * unit string, required, no default  // @vocab in context
-  
-
-Properties of `painting` annotations:
-  * exclude, array of strings, @vocab values
-  * transforms, array of Transform instances
-  
-Initial Values:
-  * Animations -- just gone
-  * Audio -- add a canvas/model with the audio
-  * Cameras -- reconstructable
-  * Lights -- reconstructable
-
-```
-"exclude": [ "Audio", "Lights", "Cameras", "Animations" ]
-```
 
 Default Annotation positioning:
 
@@ -233,8 +143,11 @@ A Camera provides a view of a region of the Scene's space from a particular posi
 </div>
 
 This specification defines two types of Camera:
-* `PerspectiveCamera` which mimics the way the human eye sees, in that objects further from the camera are smaller.
-* `OrthographicCamera` which removes visual perspective, resulting in object size remaining constant regardless of its distance from the camera.
+
+| Class               | Description  |
+| ------------------- | ------------ |
+| `PerspectiveCamera` | `PerspectiveCamera` mimics the way the human eye sees, in that objects further from the camera are smaller |
+| `OrthographicCamera` | `OrthograficCamera` removes visual perspective, resulting in object size remaining constant regardless of its distance from the camera |
 
 Cameras are positioned within the Scene facing in a defined direction. If the position is not specified, then it defaults to the origin. If the direction the camera is facing is not specified, it defaults to facing along the z axis towards negative infinity. These defaults are modified through the Annotation which adds the Camera to the Scene, described below in the [section on Annotations][].
 
@@ -335,9 +248,9 @@ Example Annotation that positions a model at a point within a Scene:
 
 ### URI Fragments
 
-The point may instead be defined using a short-hand form of a URI Fragment at the end of the `id` of the Scene as the `target` of the Annotation.
+The point may instead be defined using a short-hand form of a URI Fragment at the end of the `id` of the Scene as the `target` of the Annotation. The name of the fragment parameter is `xyz` and its value is the x, y and z values separated by commas. Each value can be expressed as either an integer or a floating point number.
 
-
+The annotation above could be expressed as its fragment-based equivalent:
 
 ```json 
 {
@@ -355,23 +268,244 @@ The point may instead be defined using a short-hand form of a URI Fragment at th
 
 ## Transforms
 
+The Annotation with a Selector on the targt can paint a resource at a point other than the origin, however it will be at its initial scale and rotation, which may not be appropriate for the scene that is being constructed.
 
- * lookAt reference to an annotation, or a point selector ; null
+This specification defines a new class of manipulations for SpecificResources called a `Transform`, with three specific sub-classes. Each Transform has three properties, `x`, `y` and `z` which determine how the Transform affects that axis in the local coordinate space.
 
 
-## Nesting
+| Class           | Description  |
+| --------------- | ------------ |
+| ScaleTransform  | A ScaleTransform applies a multiplier to one or more axes in the local coordinate space. A point that was at 3.5, after applying a ScaleTransform of 2.0 would then be at 7.0. If an axis value is not specified, then it is not changed, resulting in a default of 1.0 |
+| RotateTransform | A RotateTransform rotates the local coordinate space around the given axis in a counter-clockwise direction around the axis itself (e.g. around a pivot point of 0 on the axis). A point that was at x=1,y=1 and was rotated 90 degrees around the x axis would be at x=1,y=0,z=1. If an axis value is not specified, then it is not changed, resulting in a default of 0.0 |
+| TranslateTransform | A TranslateTransform moves all of the objects in the local coordinate space the given distance along the axis. A point that was at x=1.0, after applying a TranslateTransform of x=1.0 would be at x=2.0. If an axis value is not specified then it is not changed, resulting in a default of 0.0 |
+
+Transforms are added to a SpecificResource using the `transform` property. The value of the property is an array, which determines the order in which the transforms are to be applied. The resulting state of the first transform is the input state for the second transform, and so on. Different orders of the same set of transforms can have different results, so attention must be paid when creating the array and when processing it.
+
+The point around which RotateTransform rotates the space is the origin. This "pivot point" cannot be changed directly, but instead a TranslateTransform can be used to move the desired pivot point to the be at the origin, then the RotateTransform applied.
+
+Transforms are only used in the Presentation API when the SpecificResource is the `body` of the Annotation, and are applied before the resource is painted into the scene at the point given in the `target`.
+
+```json
+{
+    "type": "SpecificResource",
+    "source": {
+        "id": "https://example.org/iiif/assets/model1.glb",
+        "type": "Model"
+    },
+    "transform": [
+      {
+        "type": "RotateTransform",
+        "x": 0.0,
+        "y": 180.0,
+        "z": 0.0
+      },
+      {
+        "type": "TranslateTransform",
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    ]
+}
+```
+
+### Relative Rotation
+
+It is useful to be able to rotate a light or camera resource such that it is facing another object or point in the Scene, rather than calculating the angles within the Scene's coordinate space. This is accomplished with a property called `lookAt`, on DirectionalLight, SpotLight and all Cameras. The value of the property is either a PointSelector or the URI of an Annotation which paints something into the current Scene.
+
+If the value is a PointSelector, then the light or camera resource is rotated around the x and y axes such it is facing the given point. If the value is an Annotation which targets a point, via a PointSelector, URI fragment or other mechanism, then the direction the resource is facing that point.
+
+<div style="background: #A0F0A0; padding: 10px; padding-left: 30px; margin-bottom: 10px">
+❓What happens if the Annotation targets a Polygon or other non-Point? Calculate centroid? Error? First point given in the Poly / center of a sphere?
+</div>
+
+This rotation happens after the resource has been added to the Scene, and thus after any transforms have taken place in the local coordinate space. As the z axis is not affected by the rotation, any RotateTransform that changes z will be retained, but any change to x or y will be lost.
+
+```json
+"lookAt": {
+    "type": "PointSelector",
+    "x": 3,
+    "y": 0,
+    "z": -10
+}
+```
+
+## Nesting (Julie)
 
 scene in scene
 canvas in scene
 excludes
 
 
-## Scenes with Durations
+## Scenes with Durations (Mike)
 
-## Future Work
+duration
+point selector refined by duration
+restrictions on annotating container w/duration into a Scene w/o a duration
+
+
+
+## New Property Definitions (Rob)
+
+
+##### Notes on Existing Properties
+
+* `id`: Scenes MUST have `id`, per Canvases
+* `type`: All resources MUST have `type`
+* `label`: Scenes SHOULD have a `label`, per Canvases
+* `items`: Scenes SHOULD have `items`, per Canvases
+
+##### backgroundColor
+
+This property sets the background color behind any painted resources on a spatial resource, such as a Canvas or Scene.
+
+The value _MUST_ be string, which defines an RGB color. It SHOULD be a hex value starting with "#" and is treated in a case-insensitive fashion. If this property is not specified, then the default value is client-dependent.
+
+ * A Canvas _MAY_ have the `backgroundColor` property<br/>
+   Clients _SHOULD_ render `backgroundColor` on any resource type.
+ * A Scene _MAY_ have the `backgroundColor` property<br/>
+   Clients _SHOULD_ render `backgroundColor` on any resource type.
+ * Other resources _MUST NOT_ have the `backgroundColor` property.
+
+```json
+"backgroundColor": "#FFFFFF"
+```
+
+<div style="background: #A0F0A0; padding: 10px; padding-left: 30px; margin-bottom: 10px">
+❓Can you set bgColor on a transparent image? An area? Conflict with `style` on a SpecificResource?
+</div>
+
+##### near
+
+This property gives the distance from the camera from which objects are visible. Objects closer to the camera than the `near` distance cannot be seen.
+
+The value is a non-negative floating point number. If this property is not specified, then the default value is client-dependent.
+
+* A Camera _MAY_ have the `near` property<br/>
+  Clients _SHOULD_ process the `near` property on Cameras.
+
+```json
+"near": 1.5
+```
+
+##### far
+
+This property gives the distance from the camera after which objects are no longer visible. Objects further from the camera than the `far` distance cannot be seen.
+
+The value is a non-negative floating point number, and _MUST_ be greater than the value for `near` on the same camera. If this property is not specified, then the default value is client-dependent.
+
+* A Camera _MAY_ have the `far` property<br/>
+  Clients _SHOULD_ process the `far` property on Cameras.
+
+```json
+"far": 200.0
+```
+
+##### fieldOfView
+
+_Summary here_
+
+The value _MUST_ be a floating point number greater than 0 and less than 180. If this property is not specified, then the default value is client-dependent.
+
+* A PerspectiveCamera _SHOULD_ have the `fieldOfView` property.<br/>
+  Clients _SHOULD_ process the `fieldOfView` property on Cameras.
+
+```json
+  "fieldOfView": 50.0
+```
+
+##### angle
+
+_Summary here_
+
+The value _MUST_ be a floating point number greater than 0 and less than 90. If this property is not specified, then the default value is client-dependent.
+
+* A SpotLight _SHOULD_ have the `angle` property.<br/>
+  Clients _SHOULD_ process the `angle` property on SpotLights.
+
+```json
+  "angle": 15.0
+```
+
+##### lookAt
+
+_Summary here_
+
+The value _MUST_ be a JSON object, conforming to either a reference to an Annotation with an `id` and a `type` of "Anntoation", or a PointSelector. If this property is not specified, then the default value is null -- the camera or light is not looking at anything.
+
+```json
+"lookAt": {
+    "type": "PointSelector",
+    "x": 3,
+    "y": 0,
+    "z": -10
+}
+```
+
+##### color
+
+This property sets the color of a Light.
+
+The value _MUST_ be string, which defines an RGB color. It SHOULD be a hex value starting with "#" and is treated in a case-insensitive fashion. If this property is not specified, then the default value is "#FFFFFF".
+
+ * A Light _SHOULD_ have the `color` property<br/>
+   Clients _SHOULD_ render `color` on any resource type.
+ * Other resources _MUST NOT_ have the `color` property.
+
+```json
+"color": "#FFA0A0"
+```
+
+##### intensity
+
+This property sets the strength or brightness of a Light.
+
+The value _MUST_ be a JSON object, that has the `type`, `value` and `unit` properties. All three properties are required. The value of `type` _MUST_ be the string "Value". The value of `value` is a floating point number. The value of `unit` is a string, drawn from a controlled vocabulary of units. If this property is not specified, then the default intensity value is client-dependent.
+
+This specification defines the unit value of "relative" which constrains the value to be a linear scale between 0.0 (no brightness) and 1.0 (as bright as the client will render).
+
+* A Light _SHOULD_ have the `intensity` property.<br/>
+  Clients _SHOULD_ process the `intensity` property on Lights.
+
+```json
+{
+ "intensity": {"type": "Value", "value": 0.5, "unit": "relative"}
+}
+```
+
+##### exclude
+
+_Summary here_
+
+_On Annotation, a list of strings drawn from table_
+
+| Value      | Description |
+|------------|-------------|
+| Audio      | |
+| Animations | |
+| Cameras    | |
+| Lights     | |
+
+```json
+"exclude": [ "Audio", "Lights", "Cameras", "Animations" ]
+```
+
+##### transform
+
+_Summary here_
+
+The value of this property is an array of JSON objects, each of which is a Transform.
+
+##### x
+
+##### y
+
+##### z
+ 
+
+## Future Work (Tom)
 
 * Commentary Annotations
 * Interactions
 * Animations
-
 
