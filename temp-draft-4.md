@@ -1,84 +1,9 @@
 
 ---
 
-### Scratch Pad
-
-Idea - split the spec into "vocabulary" and "model" ala Web Annos
-
-
-Default Annotation positioning:
-
-For content in Scenes:
-(when no target selector)
-For models - origin of model coord space
-For Scenes - Origin of Scene
-For Canvases - the 0,0 2d origin, extending downwards, x extending along x
-
-For content in Canvases:
-Explain ordering, expand "paint them in order"
-
-
 ### List of Recipes
 
 [https://github.com/IIIF/3d/tree/main/manifests](https://github.com/IIIF/3d/tree/main/manifests)
-
-model_origin
-model_position
-model_transform_scale
-model_transform_scale_position
-model_transform_translate_scale_position
-model_transform_rotate_position
-model_transform_translate_rotate_position
-model_transform_translate_rotate_translate_position // for Zoe
-
-model_transform_negative_scale_position (-ve; mirror)
-multiple_models (mike manifest)
-
-scene_without_model ??
-scene_with_model_and_bgcolor
-
-perspective_camera_no_props
-perspective_camera_fov
-postioned_camera
-positioned_camera_lookat_point
-positioned_camera_lookat_anno
-orthographic_camera
-
-ambient_light
-directional_light_transform_rotate
-directional_light (position, lookat defines vector)
-point_light
-spotlight
-
-lights_with_intensity
-
-multiple_cameras_choice
-multiple_lights_different_colors
-multiple_cameras_and_lights (default first camera)
-
-exclude_cameras
-exclude_lights
-exclude_cameras_and_lights
-
-iiif_canvas_in_scene (polygonz explain order of points determines normal; back view is mirror)
-iiif_canvas_with_bgcolor_in_scene (back view is canvas bgcolor)
-scene_with_duration
-iiif_canvas_with_image_no_img_service
-
-video_on_canvas_in_scene_refinedby_t_mediafrag #2253
-
-scene_in_scene
-scene_in_scene_transform
-
-default_xyz_1_0 (show scale 1 and rotate,transform 0)
-
-comment_basic (pointSelector no t)
-comments_point_and_fragment (one with pointSelector with t, one refinedBy fragment t=100,120)
-comment_polygonz
-
-infinite_canvas_demo
-
-canvas_positioned_in_scene_then_duplicated_with_rotations
 
 ---
 
@@ -151,7 +76,7 @@ This specification defines two types of Camera:
 
 Cameras are positioned within the Scene facing in a specified direction. Both position and direction are defined through the Annotation which adds the Camera to the Scene, described below in the [section on Annotations][]. If either the position or direction is not specified, then the position defaults to the origin, and direction defaults to facing along the z axis towards negative infinity.
 
-The region of the Scene's space that is observable by the camera is bounded by two planes orthogonal to the direction the camera is facing, given in the `near`` and `far`` properties, and a vertical projection angle that provides the top and bottom planes of the region.
+The region of the Scene's space that is observable by the camera is bounded by two planes orthogonal to the direction the camera is facing, given in the `near` and `far` properties, and a vertical projection angle that provides the top and bottom planes of the region.
 
 The `near` property defines the minimum distance from the camera at which something in the space must exist in order to be viewed by the camera. Anything nearer to the camera than this distance will not be viewed. Conversely, the `far` property defines a maximum distance from the camera at which something in the space must exist in order to be viewed by the camera. Anything further away will not be viewed.
 
