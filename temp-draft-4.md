@@ -268,7 +268,7 @@ The annotation above could be expressed as its fragment-based equivalent:
 
 ## Transforms
 
-The Annotation with a Selector on the targt can paint a resource at a point other than the origin, however it will be at its initial scale and rotation, which may not be appropriate for the scene that is being constructed.
+The Annotation with a Selector on the target can paint a resource at a point other than the origin, however it will be at its initial scale and rotation, which may not be appropriate for the scene that is being constructed.
 
 This specification defines a new class of manipulations for SpecificResources called a `Transform`, with three specific sub-classes. Each Transform has three properties, `x`, `y` and `z` which determine how the Transform affects that axis in the local coordinate space.
 
@@ -313,7 +313,7 @@ Transforms are only used in the Presentation API when the SpecificResource is th
 
 It is useful to be able to rotate a light or camera resource such that it is facing another object or point in the Scene, rather than calculating the angles within the Scene's coordinate space. This is accomplished with a property called `lookAt`, on DirectionalLight, SpotLight and all Cameras. The value of the property is either a PointSelector or the URI of an Annotation which paints something into the current Scene.
 
-If the value is a PointSelector, then the light or camera resource is rotated around the x and y axes such it is facing the given point. If the value is an Annotation which targets a point, via a PointSelector, URI fragment or other mechanism, then the direction the resource is facing that point.
+If the value is a PointSelector, then the light or camera resource is rotated around the x and y axes such that it is facing the given point. If the value is an Annotation which targets a point via a PointSelector, URI fragment or other mechanism, then the direction the resource is facing that point.
 
 <div style="background: #A0F0A0; padding: 10px; padding-left: 30px; margin-bottom: 10px">
 ❓What happens if the Annotation targets a Polygon or other non-Point? Calculate centroid? Error? First point given in the Poly / center of a sphere?
@@ -330,18 +330,71 @@ This rotation happens after the resource has been added to the Scene, and thus a
 }
 ```
 
-## Nesting (Julie)
+## Nesting
 
-scene in scene
-canvas in scene
-excludes
+As multiple models, lights, cameras, and other resources can be associated with and placed within a Scene container, Scenes provide a straightforward way of grouping content resources together within a space. Scenes, as well as other IIIF containers such as Canvases, can also be embedded within a Scene, allowing for the nesting of content resources. 
 
+A Scene or a Canvas may be treated as a content resource, referenced or described within the `body` of an Annotation. As with models and other resources, the Annotation is associated with a Scene into which the Scene or Canvas is to be nested through an Annotation `target`. The content resource Scene will be placed within the `target` Scene by aligning the coordinate origins of the two scenes. Alternately, Scene Annotations may use `PointSelector` to place the origin of the resource Scene at a specified coordinate within the `target` Scene.
 
-## Scenes with Durations (Mike)
+As with other resources, it may be appropriate to modify the initial scale, rotation, or translation of a content resource Scene prior to painting it within another Scene. Scenes associated with SpecificResources may be manipulated through the transforms described in [Transforms](transforms_section). 
 
-duration
-point selector refined by duration
-restrictions on annotating container w/duration into a Scene w/o a duration
+Two example Scenes, with one Scene nested within another:
+
+```
+example JSON
+```
+
+### Painting 2D Canvases with Scenes
+
+TBA
+
+```
+example JSON
+```
+
+### Excluding Types of Resources
+
+Just as a Scene may contain multiple Annotations with model, light, and camera resources, a single 3D model file may contain a collection of 3D resources, including model geometry, assemblages of lights, and/or multiple cameras, with some of these potentially manipulated by animations. When painting Scenes or models that themselves may contain groups of resources within a single Scene, it may not always be appropriate to include all possible cameras, lights, or other resources, and it may be desirable to opt not to import some of these resources. This is accomplished through the Annotation property `exclude`, which prevents the import of audio, lights, cameras, or animations from a particular Scene or model Annotation prior to the Annotation being painted into a `target` Scene. When `exclude` is used, the excluded resource type should not be loaded into the Scene, and it is not possible to reactivate or turn on these excluded resources after exclusion. 
+
+## Scenes with Duration
+
+A Scene may have a `duration` property that defines its temporal extent.  Content resources may be annotated into a Scene for the entirety of its duration or for a defined period of time.
+
+A content resource may be annotated into a Scene for a period of time by use of a PointSelector that is temporally scoped by a [FragementSelector](https://www.w3.org/TR/annotation-model/#fragment-selector) using the [media fragment syntax](https://www.w3.org/TR/media-frags/) of `#t=`.  This annotation pattern uses the `refinedBy` property [defined by the W3C Web Annotation Data Model](https://www.w3.org/TR/annotation-model/#refinement-of-selection).
+
+```json
+    "target": {
+        "type": "SpecificResource",
+        "source": [
+          {
+            "id": "https://example.org/iiif/scene1",
+            "type": "Scene"
+          }
+        ],
+        "selector": [
+            {
+                "type": "PointSelector",
+                "x": -1.0,
+                "y": -1.0,
+                "z": 3.0,
+                "refinedBy": {
+                    "type": "FragmentSelector",
+                    "value": "t=45,95"
+                } 
+            }
+        ]
+    }
+```
+
+When using a URL fragment in place of a SpecificResource, the parameter `t` can be used to select the temporal region:
+
+```json
+    "target": "https://example.org/iiif/scene1#xyz=-1,-1,3&t=45,95"
+```
+
+An annotation that targets a PointSelector without any temporal refinement implicitly targets the Scene's entire duration. The Annotation's [`timeMode` property](https://iiif.io/api/presentation/3.0/#timemode) can be used to indicate the desired behavior when the content resource has a temportal extent that is not equal to the temporal region targeted by the annotation.
+
+It is an error to select a temporal region of a Scene that does not have a `duration`, or to select a temporal region that is not within the Scene's temporal extent.  A Canvas or Scene with a `duration` may not be annotated as a content resource into a Scene that does not itself have a `duration`.
 
 
 
