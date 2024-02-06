@@ -74,7 +74,7 @@ This specification defines two types of Camera:
 | `PerspectiveCamera` | `PerspectiveCamera` mimics the way the human eye sees, in that objects further from the camera are smaller |
 | `OrthographicCamera` | `OrthograficCamera` removes visual perspective, resulting in object size remaining constant regardless of its distance from the camera |
 
-Cameras are positioned within the Scene facing in a specified direction. Both position and direction are defined through the Annotation which adds the Camera to the Scene, described below in the [section on Annotations][]. If either the position or direction is not specified, then the position defaults to the origin, and direction defaults to facing along the z axis towards negative infinity.
+Cameras are positioned within the Scene facing in a specified direction. Both position and direction are defined through the Annotation which adds the Camera to the Scene, described below in the sections on [Painting Annotations][] and [Transforms][]. If either the position or direction is not specified, then the position defaults to the origin, and direction defaults to facing along the z axis towards negative infinity.
 
 The region of the Scene's space that is observable by the camera is bounded by two planes orthogonal to the direction the camera is facing, given in the `near` and `far` properties, and a vertical projection angle that provides the top and bottom planes of the region.
 
@@ -117,7 +117,7 @@ SpotLight has an additional property of `angle`, specified in degrees, which is 
 
 ![Angle of cone](https://raw.githubusercontent.com/IIIF/3d/eds/assets/images/angle-of-cone.png =250x)
 
-Lights that require a position and/or direction have these through the Annotation which associates them with the Scene. If a Light does not have an explicit direction, then the default is in the negative y direction (downwards). If a Light does not have an explicit position in the coordinate space, then the default is at the origin.
+Lights that require a position and/or direction have these through the Annotation which associates them with the Scene, described below in the sections on [Painting Annotations][] and [Transforms][]. If a Light does not have an explicit direction, then the default is in the negative y direction (downwards). If a Light does not have an explicit position in the coordinate space, then the default is at the origin.
 
 This specification does not define other aspects of Lights, such as the rate of decay of the intensity of the light over a distance, the maximum range of the light, or the penumbra of a cone. Implementation of these aspects is client-dependent.
 

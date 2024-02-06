@@ -2,14 +2,13 @@
   "@context": "http://iiif.io/api/presentation/4/context.json",
   "id": "https://example.org/iiif/3d/model_origin.json",
   "type": "Manifest",
-  "label": { "en": ["Single Model"] },
-  "summary": { "en": ["Viewer should render the model at the scene origin with a perspective camera, and add default lighting"] },
+  "label": { "en": ["Model with Explicit Perspective Camera Looking at an Annotation"] },
+  "summary": { "en": ["Viewer should render the model at the scene origin with a perspective camera looking in the direction of the Model Annotation, and add default lighting"] },
   "items": [
     {
       "id": "https://example.org/iiif/scene1/page/p1/1",
       "type": "Scene",
-  "label": { "en": ["Model with Camera looking at point"] },
-  "summary": { "en": ["Viewer should render the model at the scene origin, and the camera at the scene origin facing -Z, then add default lighting"] },
+      "label": { "en": ["Scene with Model and Camera"] },
 
       "items": [
         {

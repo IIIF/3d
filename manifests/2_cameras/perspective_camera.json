@@ -8,6 +8,7 @@
     {
       "id": "https://example.org/iiif/scene1/page/p1/1",
       "type": "Scene",
+      "label": { "en": ["Scene with Model and Camera"] },
       "items": [
         {
           "id": "https://example.org/iiif/scene1/page/p1/1",
