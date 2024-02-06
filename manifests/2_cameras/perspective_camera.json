@@ -8,7 +8,6 @@
     {
       "id": "https://example.org/iiif/scene1/page/p1/1",
       "type": "Scene",
-
       "items": [
         {
           "id": "https://example.org/iiif/scene1/page/p1/1",

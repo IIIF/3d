@@ -1,11 +1,11 @@
 {
     "@context": "http://iiif.io/api/presentation/4/context.json",
-    "id": "https://example.org/iiif/3d/multiple_lights_with_itensities_and_colors.json",
+    "id": "https://example.org/iiif/3d/scene_in_scene.json",
     "type": "Manifest",
     "label": { "en": ["Scene in Scene"] },
     "summary": {
       "en": [
-        "Viewer should render the model at the scene origin, and then add a second scene with a different model, offset from the first."
+        "Viewer should render the model at the scene origin, and then add a second scene with a different model, offset from the first. The viewer should respect the 'sequence' behavior on Range and not render two separate Scenes."
       ]
     },
     "items": [
