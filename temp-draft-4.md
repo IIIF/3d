@@ -412,7 +412,7 @@ When using a URL fragment in place of a SpecificResource, the parameter `t` can 
 }
 ```
 
-An annotation can target a specific point in time using a PointSelector's `instant` property.  The property's value must be a positive floating point number indicating a value in seconds that falls within the Scene's duration. 
+An Annotation may target a specific point in time using a PointSelector's `instant` property.  The property's value must be a positive floating point number indicating a value in seconds that falls within the Scene's duration. 
 
 ```json
 {
