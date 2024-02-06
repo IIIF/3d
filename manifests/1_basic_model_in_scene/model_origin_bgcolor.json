@@ -3,7 +3,7 @@
   "id": "https://example.org/iiif/3d/model_origin.json",
   "type": "Manifest",
   "label": { "en": ["Single Model with background color"] },
-  "summary": { "en": ["Viewer should render the model at the origin, with a background color of purple"] },
+  "summary": { "en": ["Viewer should render the model at the origin, with a background color of purple, and then viewer should add default lighting and camera"] },
   "backgroundColor": "#FF00FF",
   "items": [
     {
