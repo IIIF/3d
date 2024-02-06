@@ -358,7 +358,7 @@ Just as a Scene may contain multiple Annotations with model, light, and camera r
 
 ## Scenes with Duration
 
-A Scene may have a `duration` property that defines its length in seconds.  Content resources may be annotated into a Scene for all or part of its duration.
+A Scene may have a `duration` property that defines its length in seconds.  The `duration` value must be a positive floating point number.  Content resources may be annotated into a Scene for all or part of its duration.
 
 An annotation that targets a Scene using a PointSelector without any temporal refinement implicitly targets the Scene's entire duration.
 
