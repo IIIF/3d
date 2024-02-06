@@ -1,0 +1,13 @@
+{
+    "@context": "http://iiif.io/api/presentation/4/context.json",
+    "id": "https://example.org/iiif/3d/positioned_camera_fov.json",
+    "type": "Manifest",
+    "label": { "en": ["Positioned camera with explicit field of view."] },
+    "summary": {
+      "en": [
+        "This manifest is identical to positioned_camera_lookat_point, except that the perspective camera has a filedOfView of 200 and appears much more 'zoomed in' than in that manifest."
+      ]
+    },
+    "items": [
+    ]
+}

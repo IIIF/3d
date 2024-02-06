@@ -1,0 +1,13 @@
+{
+    "@context": "http://iiif.io/api/presentation/4/context.json",
+    "id": "https://example.org/iiif/3d/manifests/iiif_canvas_static_img_only.json",
+    "type": "Manifest",
+    "label": { "en": ["IIIF Canvas in Scene, static image only"] },
+    "summary": {
+      "en": [
+        "(demonstrates that you don't need an image service on the Canvas; if you have static images only this is how to add them to a 3D Scene )"
+      ]
+    },
+    "items": [
+    ]
+}

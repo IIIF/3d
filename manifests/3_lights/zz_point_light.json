@@ -1,0 +1,13 @@
+{
+    "@context": "http://iiif.io/api/presentation/4/context.json",
+    "id": "https://example.org/iiif/3d/positioned_camera_look_at_polygonz.json",
+    "type": "Manifest",
+    "label": { "en": ["Point light"] },
+    "summary": {
+      "en": [
+        "Viewer should render the model at the scene origin, and then viewer should add a point light source. The viewer should add a default camera but NOT default lighting."
+      ]
+    },
+    "items": [
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "@context": "http://iiif.io/api/presentation/4/context.json",
+    "id": "https://example.org/iiif/3d/positioned_camera_look_at_polygonz.json",
+    "type": "Manifest",
+    "label": { "en": ["Positioned camera looking at polygon."] },
+    "summary": {
+      "en": [
+        "This manifest is identical to positioned_camera_lookat_point, except that the lookAt target is a large polygon, the centroid of which happens to be the same point as the other manifest."
+      ]
+    },
+    "items": [
+    ]
+}
