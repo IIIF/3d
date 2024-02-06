@@ -358,9 +358,11 @@ Just as a Scene may contain multiple Annotations with model, light, and camera r
 
 ## Scenes with Duration
 
-A Scene may have a `duration` property that defines its temporal extent.  Content resources may be annotated into a Scene for the entirety of its duration or for a defined period of time.
+A Scene may have a `duration` property that defines its length in seconds.  Content resources may be annotated into a Scene for all or part of its duration.
 
-An annotation that targets a PointSelector without any temporal refinement implicitly targets the Scene's entire duration. A content resource may be annotated into a Scene for a period of time by use of a PointSelector that is temporally scoped by a [FragementSelector](https://www.w3.org/TR/annotation-model/#fragment-selector) using the [media fragment syntax](https://www.w3.org/TR/media-frags/#naming-time) of `#t=`.  This annotation pattern uses the `refinedBy` property [defined by the W3C Web Annotation Data Model](https://www.w3.org/TR/annotation-model/#refinement-of-selection).
+An annotation that targets a Scene using a PointSelector without any temporal refinement implicitly targets the Scene's entire duration.
+
+A content resource may be annotated into a Scene for a period of time by use of a PointSelector that is temporally scoped by a [FragementSelector](https://www.w3.org/TR/annotation-model/#fragment-selector).  The FragmentSelector has a `value` property, the value of which follows the [media fragment syntax](https://www.w3.org/TR/media-frags/#naming-time) of `t=`.  This annotation pattern uses the `refinedBy` property [defined by the W3C Web Annotation Data Model](https://www.w3.org/TR/annotation-model/#refinement-of-selection).
 
 ```json
 {
@@ -410,7 +412,7 @@ When using a URL fragment in place of a SpecificResource, the parameter `t` can 
 }
 ```
 
- The Annotation's [`timeMode` property](https://iiif.io/api/presentation/3.0/#timemode) can be used to indicate the desired behavior when the content resource has a temportal extent that is not equal to the temporal region targeted by the annotation.
+The Annotation's [`timeMode` property](https://iiif.io/api/presentation/3.0/#timemode) can be used to indicate the desired behavior when the duration of the content resource that is not equal to the temporal region targeted by the annotation.
 
 It is an error to select a temporal region of a Scene that does not have a `duration`, or to select a temporal region that is not within the Scene's temporal extent.  A Canvas or Scene with a `duration` may not be annotated as a content resource into a Scene that does not itself have a `duration`.
 
