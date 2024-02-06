@@ -2,8 +2,8 @@
   "@context": "http://iiif.io/api/presentation/4/context.json",
   "id": "https://example.org/iiif/3d/model_transform_scale.json",
   "type": "Manifest",
-  "label": { "en": ["Scaled Model with original for comparison"] },
-  "summary": { "en": ["Viewer should render the model twice, once at normal scale and once at double scale, and then the viewer should add default lighting and camera"] },
+  "label": { "en": ["Model shown normally and mirrored"] },
+  "summary": { "en": ["Viewer should render the model twice, once at normal scale and once at normal scale but mirrored. Then the viewer should add default lighting and camera"] },
   "items": [
     {
       "id": "https://example.org/iiif/scene1/page/p1/1",
