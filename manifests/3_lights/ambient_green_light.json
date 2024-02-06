@@ -2,15 +2,13 @@
   "@context": "http://iiif.io/api/presentation/4/context.json",
   "id": "https://example.org/iiif/3d/model_origin.json",
   "type": "Manifest",
-  "label": { "en": ["Single Model"] },
-  "summary": { "en": ["Viewer should render the model at the scene origin with a perspective camera, and add default lighting"] },
+  "label": { "en": ["Model with Green AmbientLight"] },
+  "summary": { "en": ["Viewer should render the model at the scene origin with green AmbientLight, and add default camera"] },
   "items": [
     {
       "id": "https://example.org/iiif/scene1/page/p1/1",
       "type": "Scene",
-  "label": { "en": ["Model with Explicit Camera"] },
-  "summary": { "en": ["Viewer should render the model at the scene origin, and the camera at the scene origin facing -Z, then add default lighting"] },
-
+      "label": { "en": ["Scene with Model and AmbientLight"] },
       "items": [
         {
           "id": "https://example.org/iiif/scene1/page/p1/1",
