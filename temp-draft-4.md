@@ -454,6 +454,38 @@ When using a URL fragment in place of a SpecificResource, the parameter `t` can 
 }
 ```
 
+An Annotation may target a specific point in time using a PointSelector's `instant` property.  The property's value must be a positive floating point number indicating a value in seconds that falls within the Scene's duration. 
+
+```json
+{
+    "id": "https://example.org/iiif/3d/anno1",
+    "type": "Annotation",
+    "motivation": ["painting"],
+    "body": {
+        "id": "https://example.org/iiif/assets/model1.glb",
+        "type": "Model"
+    },
+    "target": {
+        "type": "SpecificResource",
+        "source": [
+          {
+            "id": "https://example.org/iiif/scene1",
+            "type": "Scene"
+          }
+        ],
+        "selector": [
+            {
+                "type": "PointSelector",
+                "x": -1.0,
+                "y": -1.0,
+                "z": 3.0,
+                "instant": 45.0
+            }
+        ]
+    }
+}
+```
+
 The Annotation's [`timeMode` property](https://iiif.io/api/presentation/3.0/#timemode) can be used to indicate the desired behavior when the duration of the content resource that is not equal to the temporal region targeted by the annotation.
 
 It is an error to select a temporal region of a Scene that does not have a `duration`, or to select a temporal region that is not within the Scene's temporal extent.  A Canvas or Scene with a `duration` may not be annotated as a content resource into a Scene that does not itself have a `duration`.
