@@ -43,7 +43,8 @@ The positive y axis points upwards, the positive x axis points to the right, and
 
 The axes of the coordinate system are measured in arbitrary units and these units do not necessarily correspond to any physical unit of measurement. This allows arbitrarily scaled models to be used, including very small or very large, without needing to deal with very small or very large values. If there is a correspondence to a physical scale, then this can be asserted using the [physical dimensions pattern](link to physical dims).
 
-![Right handed cartesian coordinate system](https://raw.githubusercontent.com/IIIF/3d/eds/assets/images/right-handed-cartesian.png =250x)
+<img src="https://raw.githubusercontent.com/IIIF/3d/eds/assets/images/right-handed-cartesian.png" title="Right handed cartesian coordinate system" alt="diagram of Right handed cartesian coordinate system" width=200 />
+
 
 As with other containers in IIIF, Annotations are used to target the Scene to place content such as 3d models into the scene. Annotations are also used to add lights and cameras. A Scene can have multiple models, lights, cameras and other resources, allowing them to be grouped together. Scenes and other IIIF containers, such as Canvases, may also be embedded within Scenes, as described below in the [nesting section][fwd-ref-to-nesting]. 
 
@@ -84,7 +85,8 @@ For PerspectiveCameras, the vertical projection angle is specificed using the fu
 
 If any of these properties are not specified explicitly, they default to the choice of the client implementation.
 
-![image goes here](https://raw.githubusercontent.com/IIIF/3d/eds/assets/images/near-far.png =250x)
+<img src="https://raw.githubusercontent.com/IIIF/3d/eds/assets/images/near-far.png" title="Diagram showing near and far properties"  alt="drawing of a geometrical frustrum truncated by near and far distances" width="300" />
+
 
 If the Scene does not have any Cameras defined within it, then the client MUST provide a default Camera. The type, properties and position of this default camera are client-dependent.
 
@@ -115,7 +117,7 @@ Lights defined in this specification have a `color` and an `intensity`. The colo
 
 SpotLight has an additional property of `angle`, specified in degrees, which is the angle from the direction that the Light is facing to the outside extent of the cone. 
 
-![Angle of cone](https://raw.githubusercontent.com/IIIF/3d/eds/assets/images/angle-of-cone.png =250x)
+<img src="https://raw.githubusercontent.com/IIIF/3d/eds/assets/images/angle-of-cone.png" title="Angle of cone" alt="diagram of cone geometry showing how the angle of the cone is defined" />
 
 Lights that require a position and/or direction have these through the Annotation which associates them with the Scene, described below in the sections on [Painting Annotations][] and [Transforms][]. If a Light does not have an explicit direction, then the default is in the negative y direction (downwards). If a Light does not have an explicit position in the coordinate space, then the default is at the origin.
 
