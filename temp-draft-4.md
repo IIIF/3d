@@ -458,7 +458,7 @@ The Annotation's [`timeMode` property](https://iiif.io/api/presentation/3.0/#tim
 
 It is an error to select a temporal region of a Scene that does not have a `duration`, or to select a temporal region that is not within the Scene's temporal extent.  A Canvas or Scene with a `duration` may not be annotated as a content resource into a Scene that does not itself have a `duration`.
 
-## New Property Definitions (Rob)
+## New Property Definitions
 
 
 ##### Notes on Existing Properties
@@ -616,7 +616,7 @@ The value of this property is an array of JSON objects, each of which is a Trans
 ##### z
  
 
-## Future Work (Tom)
+## Future Work
 
 * Commentary Annotations
 * Interactions
