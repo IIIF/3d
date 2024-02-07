@@ -338,23 +338,65 @@ A Scene or a Canvas may be treated as a content resource, referenced or describe
 
 As with other resources, it may be appropriate to modify the initial scale, rotation, or translation of a content resource Scene prior to painting it within another Scene. Scenes associated with SpecificResources may be manipulated through the transforms described in [Transforms](transforms_section). 
 
-Two example Scenes, with one Scene nested within another:
+A simple example painting one Scene into another:
 
+```json
+{
+    "id": "https://example.org/iiif/3d/anno1",
+    "type": "Annotation",
+    "motivation": ["painting"],
+    "body": {
+        "id": "https://example.org/iiif/scene1",
+        "type": "Scene"
+    },
+    "target": "https://example.org/iiif/scene2"
+}
 ```
-example JSON
-```
 
-### Painting 2D Canvases with Scenes
+### Painting Canvases Into Scenes
 
-TBA
+A Canvas can be painted into a Scene as an Annotation, but the 2D nature of Canvases requires special consideration due to important differences between Canvases and Scenes. A Canvas describes a bounded 2D space with finite `height` and `width` measured in pixels with a pixel origin at the top-left corner of the Canvas, while Scenes describe a boundless 3D space with x, y, and z axes of arbitrary coordinate units and a coordinate origin at the center of the space. It is important to note that in many cases the pixel scale used by a Canvas or a 2D image content resource will not be in proportion to the desired 3D coordinate unit scale in a Scene. 
 
-```
-example JSON
+When a Canvas is painted as an Annotation targeting a Scene, the top-left corner of the Canvas (the pixel origin) is aligned with the 3D coordinate origin of the Scene. The top edge of the Canvas is aligned with (e.g., is colinear to) the positive x axis extending from the coordinate origin. The left edge of the Canvas is aligned with (e.g., is colinear to) the negative y axis extending from the coordinate origin. The Canvas is scaled to the Scene such that the pixel dimensions correspond to 3D coordinate units - a Canvas 200 pixels wide and 400 pixels high will extend 200 coordinate units across the x axis and 400 coordinate units across the y axis. Please note: direction terms "top", "bottom", "right", and "left" used in this section refer to the frame of reference of the Canvas itself, not the Scene into which the Canvas is painted.
+
+A Canvas in a Scene has a specific forward face and a backward face. By default, the forward face of a Canvas should point in the direction of the positive z axis. If the property `backgroundColor` is used, this color should be used for the backward face of the Canvas. Otherwise, a reverse view of the forward face of the Canvas should be visible on the backward face.
+
+<div style="background: #A0F0A0; padding: 10px; padding-left: 30px; margin-bottom: 10px">
+  To Do: Add an image demonstrating default Canvas placement in Scene
+</div>
+
+A `PointSelector` can be used to modify the point at which the Canvas will be painted, by establishing a new point to align with the top-left corner of the Canvas instead of the Scene coordinate origin. Transforms can also be used to modify Canvas rotation, scale, or translation.
+
+It may be desirable to exercise greater control over how the Canvas is painted into the Scene by selecting the coordinate points in the Scene that should correspond to each corner of the Canvas. This provides fine-grained manipulation of Canvas placement and/or scale, and for optionally introducing Canvas distortion or skew. Annotations may use a type of Selector called a `PolygonZSelector` to select different points in the Scene to align with the top-left, bottom-left, bottom-right, and top-right corners of the Canvas. PolygonZSelectors have a single property, `value`, which is a string listing a WKT `POLYGONZ` expression containing four coordinate points, with each coordinate separated by commas, and axes within a coordinate separated by spaces. The four Scene coordinates should be listed beginning with the coordinate corresponding to the top-left corner of the Canvas, and should proceed in a counter-clockwise winding order around the Canvas, with coordinates corresponding to bottom-left, bottom-right, and top-right corners in order respectively. The use of PolygonZSelector overrides any use of Transforms on the Canvas Annotation.
+
+Example placing top-left at (0, 1, 0); bottom-left at (0, 0, 0); bottom-right at (1, 0, 0); and top-right at (1, 1, 0):
+```json
+"selector": [
+  {
+    "type": "PolygonZSelector",
+    "value": "POLYGONZ((0 1 0, 0 0 0, 1 0 0, 1 1 0))"
+  }
+]
 ```
 
 ### Excluding Types of Resources
 
-Just as a Scene may contain multiple Annotations with model, light, and camera resources, a single 3D model file may contain a collection of 3D resources, including model geometry, assemblages of lights, and/or multiple cameras, with some of these potentially manipulated by animations. When painting Scenes or models that themselves may contain groups of resources within a single Scene, it may not always be appropriate to include all possible cameras, lights, or other resources, and it may be desirable to opt not to import some of these resources. This is accomplished through the Annotation property `exclude`, which prevents the import of audio, lights, cameras, or animations from a particular Scene or model Annotation prior to the Annotation being painted into a `target` Scene. When `exclude` is used, the excluded resource type should not be loaded into the Scene, and it is not possible to reactivate or turn on these excluded resources after exclusion. 
+Just as a Scene may contain multiple Annotations with model, light, and camera resources, a single 3D model file may contain a collection of 3D resources, including model geometry, assemblages of lights, and/or multiple cameras, with some of these potentially manipulated by animations. When painting Scenes or models that themselves may contain groups of resources within a single Scene, it may not always be appropriate to include all possible cameras, lights, or other resources, and it may be desirable to opt not to import some of these resources. This is accomplished through the Annotation property `exclude`, which prevents the import of audio, lights, cameras, or animations from a particular Scene or model prior to the Annotation being painted into a Scene. When `exclude` is used, the excluded resource type should not be loaded into the Scene, and it is not possible to reactivate or turn on these excluded resources after loading. 
+
+Painting a Scene into another while excluding import of several types of resources:
+```json
+{
+    "id": "https://example.org/iiif/3d/anno1",
+    "type": "Annotation",
+    "motivation": ["painting"],
+    "exclude": ["Audio", "Lights", "Cameras", "Animations"],
+    "body": {
+        "id": "https://example.org/iiif/scene1",
+        "type": "Scene"
+    },
+    "target": "https://example.org/iiif/scene2"
+}
+```
 
 ## Scenes with Duration
 
@@ -443,7 +485,7 @@ The value _MUST_ be string, which defines an RGB color. It SHOULD be a hex value
 ```
 
 <div style="background: #A0F0A0; padding: 10px; padding-left: 30px; margin-bottom: 10px">
-❓Can you set bgColor on a transparent image? An area? Conflict with `style` on a SpecificResource?
+❓!Can you set bgColor on a transparent image? An area? Conflict with `style` on a SpecificResource?
 </div>
 
 ##### near
