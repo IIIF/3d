@@ -1,0 +1,13 @@
+{
+    "@context": "http://iiif.io/api/presentation/4/context.json",
+    "id": "https://example.org/iiif/3d/canvas_positioned_in_scene_then_duplicated_with_rotations.json",
+    "type": "Manifest",
+    "label": { "en": ["IIIF Canvas positioned in Scene multiple times with rotations"] },
+    "summary": {
+      "en": [
+        "The Manifest has one Scene and one Canvas. Viewer should render what appears to be a ring of the same image (the Canvas) repeated multiple times. The viewer should respect the 'sequence' behavior on Range and not render a Scene and an independent Canvas.  https://i.etsystatic.com/9733435/r/il/7dbfe6/1879105213/il_fullxfull.1879105213_2xj3.jpg"
+      ]
+    },
+    "items": [
+    ]
+}

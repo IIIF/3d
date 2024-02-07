@@ -1,84 +1,9 @@
 
 ---
 
-### Scratch Pad
-
-Idea - split the spec into "vocabulary" and "model" ala Web Annos
-
-
-Default Annotation positioning:
-
-For content in Scenes:
-(when no target selector)
-For models - origin of model coord space
-For Scenes - Origin of Scene
-For Canvases - the 0,0 2d origin, extending downwards, x extending along x
-
-For content in Canvases:
-Explain ordering, expand "paint them in order"
-
-
 ### List of Recipes
 
 [https://github.com/IIIF/3d/tree/main/manifests](https://github.com/IIIF/3d/tree/main/manifests)
-
-model_origin
-model_position
-model_transform_scale
-model_transform_scale_position
-model_transform_translate_scale_position
-model_transform_rotate_position
-model_transform_translate_rotate_position
-model_transform_translate_rotate_translate_position // for Zoe
-
-model_transform_negative_scale_position (-ve; mirror)
-multiple_models (mike manifest)
-
-scene_without_model ??
-scene_with_model_and_bgcolor
-
-perspective_camera_no_props
-perspective_camera_fov
-postioned_camera
-positioned_camera_lookat_point
-positioned_camera_lookat_anno
-orthographic_camera
-
-ambient_light
-directional_light_transform_rotate
-directional_light (position, lookat defines vector)
-point_light
-spotlight
-
-lights_with_intensity
-
-multiple_cameras_choice
-multiple_lights_different_colors
-multiple_cameras_and_lights (default first camera)
-
-exclude_cameras
-exclude_lights
-exclude_cameras_and_lights
-
-iiif_canvas_in_scene (polygonz explain order of points determines normal; back view is mirror)
-iiif_canvas_with_bgcolor_in_scene (back view is canvas bgcolor)
-scene_with_duration
-iiif_canvas_with_image_no_img_service
-
-video_on_canvas_in_scene_refinedby_t_mediafrag #2253
-
-scene_in_scene
-scene_in_scene_transform
-
-default_xyz_1_0 (show scale 1 and rotate,transform 0)
-
-comment_basic (pointSelector no t)
-comments_point_and_fragment (one with pointSelector with t, one refinedBy fragment t=100,120)
-comment_polygonz
-
-infinite_canvas_demo
-
-canvas_positioned_in_scene_then_duplicated_with_rotations
 
 ---
 
@@ -113,7 +38,7 @@ A virtual container that represents a boundless three-dimensional space and has 
 
 ## Scenes
 
-A Scene in IIIF is a virtual container that represents a boundless three-dimensional space and has content resources, lights and cameras positioned at locations within it. It may also have a duration to allow the sequencing of events and timed media. Scenes have infinite height (y axis), width (x axis) and depth (z axis), where 0 on each axis (the origin of the coordinate system) is the treated as the center of the scene's space. 
+A Scene in IIIF is a virtual container that represents a boundless three-dimensional space and has content resources, lights and cameras positioned at locations within it. It may also have a duration to allow the sequencing of events and timed media. Scenes have infinite height (y axis), width (x axis) and depth (z axis), where 0 on each axis (the origin of the coordinate system) is treated as the center of the scene's space. 
 The positive y axis points upwards, the positive x axis points to the right, and the positive z axis points forwards (a [right-handed cartesian coordinate system](link to wikipedia)).
 
 The axes of the coordinate system are measured in arbitrary units and these units do not necessarily correspond to any physical unit of measurement. This allows arbitrarily scaled models to be used, including very small or very large, without needing to deal with very small or very large values. If there is a correspondence to a physical scale, then this can be asserted using the [physical dimensions pattern](link to physical dims).
@@ -149,11 +74,13 @@ This specification defines two types of Camera:
 | `PerspectiveCamera` | `PerspectiveCamera` mimics the way the human eye sees, in that objects further from the camera are smaller |
 | `OrthographicCamera` | `OrthograficCamera` removes visual perspective, resulting in object size remaining constant regardless of its distance from the camera |
 
-Cameras are positioned within the Scene facing in a defined direction. If the position is not specified, then it defaults to the origin. If the direction the camera is facing is not specified, it defaults to facing along the z axis towards negative infinity. These defaults are modified through the Annotation which adds the Camera to the Scene, described below in the [section on Annotations][].
+Cameras are positioned within the Scene facing in a specified direction. Both position and direction are defined through the Annotation which adds the Camera to the Scene, described below in the sections on [Painting Annotations][] and [Transforms][]. If either the position or direction is not specified, then the position defaults to the origin, and direction defaults to facing along the z axis towards negative infinity.
 
-The region of the Scene's space that is observable by the camera is bounded by two planes orthogonal to the direction the camera is facing, given in the `near` and `far` properties, and a vertical projection angle that provides the top and bottom planes of the region. For PerspectiveCameras the full angular extent from the top plane to the bottom plane is defined by the `fieldOfView` property and specified in degrees. For OrthographicCameras, the projection is parallel. The `fieldOfView` angle MUST be greater than 0 and less than 180.
+The region of the Scene's space that is observable by the camera is bounded by two planes orthogonal to the direction the camera is facing, given in the `near` and `far` properties, and a vertical projection angle that provides the top and bottom planes of the region.
 
-The `near` property, thus, defines the minimum distance from the camera at which something in the space must exist in order to be viewed by the camera. Anything nearer to the camera than this distance will not be viewed. Conversely the `far` property defines a maximum distance from the camera at which something in the space must exist in order to be viewed by the camera. Anything further away will not be viewed.
+The `near` property defines the minimum distance from the camera at which something in the space must exist in order to be viewed by the camera. Anything nearer to the camera than this distance will not be viewed. Conversely, the `far` property defines a maximum distance from the camera at which something in the space must exist in order to be viewed by the camera. Anything further away will not be viewed.
+
+For PerspectiveCameras, the vertical projection angle is specificed using the full angular extent in degrees from the top plane to the bottom plane using the `fieldOfView` property. The `fieldOfView` angle MUST be greater than 0 and less than 180. For OrthographicCameras, the vertical projection is always parallel and thus not defined. 
 
 If any of these properties are not specified explicitly, they default to the choice of the client implementation.
 
@@ -190,7 +117,7 @@ SpotLight has an additional property of `angle`, specified in degrees, which is 
 
 ![Angle of cone](https://raw.githubusercontent.com/IIIF/3d/eds/assets/images/angle-of-cone.png =250x)
 
-Lights that require a position and/or direction have these through the Annotation which associates them with the Scene. If a Light does not have an explicit direction, then the default is in the negative y direction (downwards). If a Light does not have an explicit position in the coordinate space, then the default is at the origin.
+Lights that require a position and/or direction have these through the Annotation which associates them with the Scene, described below in the sections on [Painting Annotations][] and [Transforms][]. If a Light does not have an explicit direction, then the default is in the negative y direction (downwards). If a Light does not have an explicit position in the coordinate space, then the default is at the origin.
 
 This specification does not define other aspects of Lights, such as the rate of decay of the intensity of the light over a distance, the maximum range of the light, or the penumbra of a cone. Implementation of these aspects is client-dependent.
 
@@ -213,7 +140,7 @@ A construct called a Selector is used to select a part of a resource, such as a 
 
 All resources that can be added to a Scene have an implicit (e.g. Lights, Cameras) or explicit (e.g. Models, Scenes), local coordinate space. If a resource does not have an explicit coordinate space, then it is positioned at the origin of its coordinate space. In order to add a resource with its local coordinate space into a Scene with its own coordinate space, these spaces must be aligned. This done by aligning the origins of the two coordinate spaces.
 
-Annotations may use a type of Selector called a `PointSelector` to select a different point than the Scene's origin to be aligned with. PointSelectors have three spatial properties, `x`, `y` and `z` which give the value on that axis. They also have a temporal property `instant` which can be used if the Scene has a duration, which gives the temporal point in seconds from the start of the duration, the use of which is defined in the [section on Scenes with Durations]().
+Annotations may use a type of Selector called a `PointSelector` to align the Annotation to a point within the Scene that is not the Scene's origin.. PointSelectors have three spatial properties, `x`, `y` and `z` which give the value on that axis. They also have a temporal property `instant` which can be used if the Scene has a duration, which gives the temporal point in seconds from the start of the duration, the use of which is defined in the [section on Scenes with Durations]().
 
 Example Annotation that positions a model at a point within a Scene:
 
@@ -311,7 +238,7 @@ Transforms are only used in the Presentation API when the SpecificResource is th
 
 ### Relative Rotation
 
-It is useful to be able to rotate a light or camera resource such that it is facing another object or point in the Scene, rather than calculating the angles within the Scene's coordinate space. This is accomplished with a property called `lookAt`, on DirectionalLight, SpotLight and all Cameras. The value of the property is either a PointSelector or the URI of an Annotation which paints something into the current Scene.
+It is useful to be able to rotate a light or camera resource such that it is facing another object or point in the Scene, rather than calculating the angles within the Scene's coordinate space. This is accomplished with a property called `lookAt`, valid on DirectionalLight, SpotLight, and all Cameras. The value of the property is either a PointSelector or the URI of an Annotation which paints something into the current Scene.
 
 If the value is a PointSelector, then the light or camera resource is rotated around the x and y axes such that it is facing the given point. If the value is an Annotation which targets a point via a PointSelector, URI fragment or other mechanism, then the direction the resource is facing that point.
 

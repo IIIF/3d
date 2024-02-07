@@ -1,0 +1,13 @@
+{
+    "@context": "http://iiif.io/api/presentation/4/context.json",
+    "id": "https://example.org/iiif/3d/manifests/exclude_cameras_and_lights.json",
+    "type": "Manifest",
+    "label": { "en": ["Exclude Cameras and Lights"] },
+    "summary": {
+      "en": [
+        "Viewer renders a model _that includes a camera and a light_ at the origin. The viewer adds a default camera and does not offer the in-model camera as an option to the user. The viewer adds the light defined in the Manifest and does not render any lighting effects from the in-model light."
+      ]
+    },
+    "items": [
+    ]
+}

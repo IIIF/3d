@@ -2,14 +2,13 @@
   "@context": "http://iiif.io/api/presentation/4/context.json",
   "id": "https://example.org/iiif/3d/model_origin.json",
   "type": "Manifest",
-  "label": { "en": ["Single Model"] },
-  "summary": { "en": ["Viewer should render the model at the scene origin with a perspective camera, and add default lighting"] },
+  "label": { "en": ["Model with Explicit Perspective Camera Looking at a Point"] },
+  "summary": { "en": ["Viewer should render the model at the scene origin with a perspective camera looking toward the PointSelector coordinates, and add default lighting"] },
   "items": [
     {
       "id": "https://example.org/iiif/scene1/page/p1/1",
       "type": "Scene",
-  "label": { "en": ["Model with Camera looking at point"] },
-  "summary": { "en": ["Viewer should render the model at the scene origin, and the camera at the scene origin facing -Z, then add default lighting"] },
+      "label": { "en": ["Scene with a Model and Camera Looking at a Point"] },
 
       "items": [
         {
@@ -35,8 +34,10 @@
                 "type": "PerspectiveCamera",
                 "label": {"en": ["Perspective Camera 1"]},
                 "lookAt": {
-                  "id": "https://example.org/iiif/3d/anno1",
-                  "type": "Annotation"
+                  "type": "PointSelector",
+                  "x": 2,
+                  "y": 1,
+                  "z": 0
                 }
               },
               "target": {

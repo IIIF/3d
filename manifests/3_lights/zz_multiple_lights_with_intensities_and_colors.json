@@ -1,0 +1,13 @@
+{
+    "@context": "http://iiif.io/api/presentation/4/context.json",
+    "id": "https://example.org/iiif/3d/multiple_lights_with_itensities_and_colors.json",
+    "type": "Manifest",
+    "label": { "en": ["Multiple lights with intensities and colors."] },
+    "summary": {
+      "en": [
+        "Viewer should render the model at the scene origin, and then viewer should add two spotlights and an ambient light source, all of different colors. The viewer should add a default camera but NOT any other lighting."
+      ]
+    },
+    "items": [
+    ]
+}

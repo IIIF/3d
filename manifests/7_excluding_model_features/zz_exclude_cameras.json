@@ -1,0 +1,13 @@
+{
+    "@context": "http://iiif.io/api/presentation/4/context.json",
+    "id": "https://example.org/iiif/3d/manifests/exclude_cameras.json",
+    "type": "Manifest",
+    "label": { "en": ["Exclude Cameras"] },
+    "summary": {
+      "en": [
+        "Viewer renders a model _that includes a camera_ at the origin. The viewer adds a default camera and does not offer the in-model camera as an option to the user."
+      ]
+    },
+    "items": [
+    ]
+}
