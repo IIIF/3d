@@ -22,7 +22,7 @@
                 "type": "SpecificResource",
                 "source": [
                   {
-                    "id": "https://github.com/IIIF/3d/raw/main/assets/astronaut/astronaut.glb",
+                    "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/astronaut/astronaut.glb",
                     "type": "Model",
                     "format": "application/glb"
                   }
