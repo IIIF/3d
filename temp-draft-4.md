@@ -73,7 +73,7 @@ This specification defines two types of Camera:
 | Class               | Description  |
 | ------------------- | ------------ |
 | `PerspectiveCamera` | `PerspectiveCamera` mimics the way the human eye sees, in that objects further from the camera are smaller |
-| `OrthographicCamera` | `OrthograficCamera` removes visual perspective, resulting in object size remaining constant regardless of its distance from the camera |
+| `OrthographicCamera` | `OrthographicCamera` removes visual perspective, resulting in object size remaining constant regardless of its distance from the camera |
 
 Cameras are positioned within the Scene facing in a specified direction. Both position and direction are defined through the Annotation which adds the Camera to the Scene, described below in the sections on [Painting Annotations][] and [Transforms][]. If either the position or direction is not specified, then the position defaults to the origin, and direction defaults to facing along the z axis towards negative infinity.
 
@@ -142,7 +142,7 @@ A construct called a Selector is used to select a part of a resource, such as a 
 
 All resources that can be added to a Scene have an implicit (e.g. Lights, Cameras) or explicit (e.g. Models, Scenes), local coordinate space. If a resource does not have an explicit coordinate space, then it is positioned at the origin of its coordinate space. In order to add a resource with its local coordinate space into a Scene with its own coordinate space, these spaces must be aligned. This done by aligning the origins of the two coordinate spaces.
 
-Annotations may use a type of Selector called a `PointSelector` to align the Annotation to a point within the Scene that is not the Scene's origin.. PointSelectors have three spatial properties, `x`, `y` and `z` which give the value on that axis. They also have a temporal property `instant` which can be used if the Scene has a duration, which gives the temporal point in seconds from the start of the duration, the use of which is defined in the [section on Scenes with Durations]().
+Annotations may use a type of Selector called a `PointSelector` to align the Annotation to a point within the Scene that is not the Scene's origin. PointSelectors have three spatial properties, `x`, `y` and `z` which give the value on that axis. They also have a temporal property `instant` which can be used if the Scene has a duration, which gives the temporal point in seconds from the start of the duration, the use of which is defined in the [section on Scenes with Durations]().
 
 Example Annotation that positions a model at a point within a Scene:
 
@@ -333,7 +333,7 @@ A Scene may have a `duration` property that defines its length in seconds.  The 
 
 An annotation that targets a Scene using a PointSelector without any temporal refinement implicitly targets the Scene's entire duration.
 
-A content resource may be annotated into a Scene for a period of time by use of a PointSelector that is temporally scoped by a [FragementSelector](https://www.w3.org/TR/annotation-model/#fragment-selector).  The FragmentSelector has a `value` property, the value of which follows the [media fragment syntax](https://www.w3.org/TR/media-frags/#naming-time) of `t=`.  This annotation pattern uses the `refinedBy` property [defined by the W3C Web Annotation Data Model](https://www.w3.org/TR/annotation-model/#refinement-of-selection).
+A content resource may be annotated into a Scene for a period of time by use of a PointSelector that is temporally scoped by a [FragmentSelector](https://www.w3.org/TR/annotation-model/#fragment-selector).  The FragmentSelector has a `value` property, the value of which follows the [media fragment syntax](https://www.w3.org/TR/media-frags/#naming-time) of `t=`.  This annotation pattern uses the `refinedBy` property [defined by the W3C Web Annotation Data Model](https://www.w3.org/TR/annotation-model/#refinement-of-selection).
 
 ```json
 {
