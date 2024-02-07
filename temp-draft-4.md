@@ -485,7 +485,7 @@ The value _MUST_ be string, which defines an RGB color. It SHOULD be a hex value
 ```
 
 <div style="background: #A0F0A0; padding: 10px; padding-left: 30px; margin-bottom: 10px">
-❓!Can you set bgColor on a transparent image? An area? Conflict with `style` on a SpecificResource?
+❓Can you set bgColor on a transparent image? An area? Conflict with `style` on a SpecificResource?
 </div>
 
 ##### near
