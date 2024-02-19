@@ -23,25 +23,30 @@ Note: Currently (as of 1/24/2024), the position values included in the draft man
 
 ### Milestone 1: Place Model in 3D Scene
 
-Manifest: https://github.com/IIIF/3d/raw/main/demo/json/manifests/model_origin.json 
+Manifest: https://raw.githubusercontent.com/IIIF/3d/demo_milestones/demo/json/manifests/model_origin.json
+
 Acceptance criteria: Astronaut asset is positioned at origin of 3D scene.
 
 ### Milestone 2: Place Model at Position in 3D Scene
 
-Manifest: https://github.com/IIIF/3d/raw/main/demo/json/manifests/model_position.json 
+Manifest: https://raw.githubusercontent.com/IIIF/3d/demo_milestones/demo/json/manifests/model_position.json
+
 Acceptance criteria: Astronaut asset is positioned at specified coordinates of 3D scene.
 
 ### Milestone 3: Place Scale-Transformed Model in 3D Scene
 
-Manifest: https://github.com/IIIF/3d/raw/main/demo/json/manifests/model_transform_scale.json 
+Manifest: https://raw.githubusercontent.com/IIIF/3d/demo_milestones/demo/json/manifests/model_transform_scale.json
+
 Acceptance criteria: Astronaut asset is transformed to specified scale and positioned at origin of 3D scene.
 
 ### Milestone 4: Place Scale-Transformed Model at Position in 3D Scene
 
-Manifest: https://github.com/IIIF/3d/raw/main/demo/json/manifests/model_transform_scale_position.json 
+Manifest: https://raw.githubusercontent.com/IIIF/3d/demo_milestones/demo/json/manifests/model_transform_scale_position.json
+
 Acceptance criteria: Astronaut asset is transformed to specified scale and positioned at specified coordinates of 3D scene.
 
 ### Milestone 5: Place Scaled and Translated Model at Position in 3D Scene
 
-Manifest: https://github.com/IIIF/3d/raw/main/demo/json/manifests/model_transform_translate_scale_position.json 
+Manifest: https://raw.githubusercontent.com/IIIF/3d/demo_milestones/demo/json/manifests/model_transform_translate_scale_position.json
+
 Acceptance criteria: Astronaut asset is transformed to specified scale, translated, and positioned at specified coordinates of 3D scene.
