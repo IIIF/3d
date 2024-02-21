@@ -1,0 +1,13 @@
+{
+    "@context": "http://iiif.io/api/presentation/4/context.json",
+    "id": "https://example.org/iiif/3d/manifests/include_cameras_and_lights.json",
+    "type": "Manifest",
+    "label": { "en": ["Include Cameras and Lights (default behavior)"] },
+    "summary": {
+      "en": [
+        "Viewer renders a model _that includes a camera and a light_ at the origin. The viewer uses the in-model camera and does not add its own camera. The viewer renders lighting effects from the in-model light and does not add its own light(s)"
+      ]
+    },
+    "items": [
+    ]
+}

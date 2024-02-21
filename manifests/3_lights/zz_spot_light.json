@@ -1,0 +1,13 @@
+{
+    "@context": "http://iiif.io/api/presentation/4/context.json",
+    "id": "https://example.org/iiif/3d/spot_light.json",
+    "type": "Manifest",
+    "label": { "en": ["Spotlight"] },
+    "summary": {
+      "en": [
+        "Viewer should render the model at the scene origin, and then viewer should add a spotlight at 5,5,5 defaulting to white light. The viewer should add a default camera but NOT any other lighting."
+      ]
+    },
+    "items": [
+    ]
+}

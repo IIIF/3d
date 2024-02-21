@@ -1,0 +1,62 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "https://example.org/iiif/3d/model_origin.json",
+  "type": "Manifest",
+  "label": { "en": ["Model with DirectionalLight"] },
+  "summary": { "en": ["Viewer should render the model at the scene origin with a DirectionalLight positioned at the point in the Scene defined by the PointSelector and facing the the Model, then add default camera"] },
+  "items": [
+    {
+      "id": "https://example.org/iiif/scene1/page/p1/1",
+      "type": "Scene",
+      "label": { "en": ["Scene with Model and DirectionalLight"] },
+  
+      "items": [
+        {
+          "id": "https://example.org/iiif/scene1/page/p1/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/iiif/3d/anno1",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/astronaut/astronaut.glb",
+                "type": "Model"
+              },
+              "target": "https://example.org/iiif/scene1/page/p1/1"
+            },
+            {
+              "id": "https://example.org/iiif/3d/anno2",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                    "id": "https://example.org/iiif/3d/lights/1",
+                    "type": "DirectionalLight",
+                    "label": {"en": ["Directional Light 1"]},
+                    "lookAt": {
+                      "id": "https://example.org/iiif/3d/anno1",
+                      "type": "Annotation"
+                    }
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": {
+                  "id": "https://example.org/iiif/scene1/page/p1/1",
+                  "type": "Scene"
+                },
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 0.0,
+                    "y": 3.0,
+                    "z": 10.0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

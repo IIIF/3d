@@ -1,0 +1,63 @@
+{
+    "@context": "http://iiif.io/api/presentation/4/context.json",
+    "id": "https://example.org/iiif/3d/orthographic_camera.json",
+    "type": "Manifest",
+    "label": { "en": ["Orthographic Camera"] },
+    "summary": { "en": ["Viewer should render the model at the scene origin and an Orthographic camera looking at the model, and add default lighting."] },
+    "items": [
+      {
+        "id": "https://example.org/iiif/scene1/page/p1/1",
+        "type": "Scene",
+        "items": [
+          {
+            "id": "https://example.org/iiif/scene1/page/p1/1",
+            "type": "AnnotationPage",
+            "items": [
+              {
+                "id": "https://example.org/iiif/3d/anno1",
+                "type": "Annotation",
+                "motivation": ["painting"],
+                "body": {
+                  "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/astronaut/astronaut.glb",
+                  "type": "Model"
+                },
+                "target": "https://example.org/iiif/scene1/page/p1/1"
+              },
+              {
+                "id": "https://example.org/iiif/3d/anno3",
+                "type": "Annotation",
+                "motivation": ["painting"],
+                "body": {
+                  "id": "https://example.org/iiif/3d/cameras/2",
+                  "type": "OrthographicCamera",
+                  "label": {"en": ["Orthographic Camera 1"]},
+                  "lookAt": {
+                    "type": "Annotation",
+                    "id": "https://example.org/iiif/3d/anno1"
+                  }
+                },
+                "target": {
+                  "type": "SpecificResource",
+                  "source": [
+                    {
+                      "id": "https://example.org/iiif/scene1/page/p1/1",
+                      "type": "Scene"
+                    }
+                  ],
+                  "selector": [
+                    {
+                      "type": "PointSelector",
+                      "x": 0.0,
+                      "y": 3.0,
+                      "z": -10.0
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

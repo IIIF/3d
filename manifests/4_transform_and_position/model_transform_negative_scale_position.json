@@ -1,0 +1,88 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "https://example.org/iiif/3d/model_transform_scale.json",
+  "type": "Manifest",
+  "label": { "en": ["Model shown normally and mirrored"] },
+  "summary": { "en": ["Viewer should render the model twice, once at normal scale and once at normal scale but mirrored. Then the viewer should add default lighting and camera"] },
+  "items": [
+    {
+      "id": "https://example.org/iiif/scene1/page/p1/1",
+      "type": "Scene",
+      "label": { "en": ["A Scene"] },
+      "items": [
+        {
+          "id": "https://example.org/iiif/scene1/page/p1/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/iiif/3d/anno1",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "id": "https://github.com/IIIF/3d/raw/main/assets/venus/venus.glb",
+                "type": "Model"
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": -1.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  }
+                ]
+              }
+            },
+            {
+              "id": "https://example.org/iiif/3d/anno2",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://github.com/IIIF/3d/raw/main/assets/venus/venus.glb",
+                    "type": "Model",
+                    "format": "application/glb"
+                  }
+                ],
+                "transform": [
+                  {
+                    "type": "ScaleTransform",
+                    "x": -1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                  }
+                ]
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 1.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

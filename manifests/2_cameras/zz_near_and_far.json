@@ -1,0 +1,13 @@
+{
+    "@context": "http://iiif.io/api/presentation/4/context.json",
+    "id": "https://example.org/iiif/3d/near_and_far.json",
+    "type": "Manifest",
+    "label": { "en": ["Cameras: Near and far"] },
+    "summary": {
+      "en": [
+        "Viewer should render five models along the z axis, 2 units apart, starting at 2. The camera is positioned at the origin such that in the absence of near and far properties, it could see all the astronauts, but with these properties set to 3 and 9 respectively, it can only see the middle three."
+      ]
+    },
+    "items": [
+    ]
+}
