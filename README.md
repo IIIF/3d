@@ -3,13 +3,14 @@ This repository contains issues recording discussions and progress on tasks for 
 
 ## Current WIP Materials ##
 
+- [Draft IIIF Presentation API Specification Document](https://iiif.github.io/3d/temp-draft-4): Partial IIIF Presentation API specification document containing new, updated, and modified content most relevant to 3D. This document will evolve over time and reflects the current approaches being used by the TSG to provide 3D support via the Presentation API.
 - [Draft 3D-Capable IIIF Presentation Manifests](https://github.com/IIIF/3d/tree/main/manifests): As the group works to make consensus determinations on how a Presentation API specification draft could be expanded to support 3D, it's necessary to produce example sketches of "complete" Presentation API manifests that describe the presentation of 3D materials. This folder within this GitHub repository includes our WIP presentation manifest examples, often generated at in-person working meetings. It is likely that these manifests will become better and more elaborate over time, so new users should check out the most recently created manifests first.
 - [Open Access 3D Asset Collection](https://github.com/IIIF/3d/tree/main/assets): To support manifest drafts and experimental demos, we have gathered a collection of CC0 or other open access 3D models for TSG users to use.
-- [Experimental Demos (Using Draft Manifests)](https://github.com/IIIF/3d/blob/main/demo/EXPERIMENTS.md): Using the draft manifests and assets from above, the group works to create iteratively developed demo experiments displaying and contextualizing 3D resources using IIIF Presentation API principles.
+- [Experimental Demos (Using Draft Manifests)](https://iiif.github.io/3d/demo/EXPERIMENTS): Using the draft manifests and assets from above, the group works to create iteratively developed demo experiments displaying and contextualizing 3D resources using IIIF Presentation API principles.
 
 ## Completed Or Non-Current Materials ##
 
-- [Experimental Demos (Not Using Draft Manifests)](https://github.com/IIIF/3d/blob/main/demo/JSON_DEMOS_ISSUE_17.md): A now-completed set of viewer demo experiments loading 3D annotations from a simple (non-IIIF-manifest) JSON file to demonstrate feasibility of implementing similar behavior across multiple 3D viewers.
+- [Experimental Demos (Not Using Draft Manifests)](https://iiif.github.io/3d/demo/JSON_DEMOS_ISSUE_17): A now-completed set of viewer demo experiments loading 3D annotations from a simple (non-IIIF-manifest) JSON file to demonstrate feasibility of implementing similar behavior across multiple 3D viewers.
 
 ## Relevant Links ##
 
