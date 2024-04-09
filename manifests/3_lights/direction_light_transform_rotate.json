@@ -35,7 +35,9 @@
                   {
                     "id": "https://example.org/iiif/3d/lights/1",
                     "type": "DirectionalLight",
-                    "label": {"en": ["Directional Light 1"]}
+                    "label": {"en": ["Directional Light 1"]},
+                    "color": "#00FF00",
+                    "intensity": {"type": "Value", "value": 0.5, "unit": "relative"}
                   }
                 ],
                 "transform": [
