@@ -1,6 +1,6 @@
 {
   "@context": "http://iiif.io/api/presentation/4/context.json",
-  "id": "https://example.org/iiif/3d/model_transform_scale.json",
+  "id": "https://example.org/iiif/3d/model_transform_translate_rotate_position.json",
   "type": "Manifest",
   "label": { "en": ["Translated Rotated Model"] },
   "summary": { "en": ["Viewer should render the model after moving 1 in X, then rotating by 180 degrees around the Y axis, resulting in him being at -1 in X"] },
