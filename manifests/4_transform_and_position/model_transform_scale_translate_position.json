@@ -1,6 +1,6 @@
 {
   "@context": "http://iiif.io/api/presentation/4/context.json",
-  "id": "https://example.org/iiif/3d/model_transform_scale.json",
+  "id": "https://example.org/iiif/3d/model_transform_scale_translate_position.json",
   "type": "Manifest",
   "label": { "en": ["Scaled, Translated Model with original for comparison"] },
   "summary": { "en": ["Viewer should render the model twice, once at normal scale and once at double scale after moving in the local coordinate space, and then the viewer should add default lighting and camera. Thus the model will end up at (3,2,2) due to doubling the scale of the local coordinate space."] },
