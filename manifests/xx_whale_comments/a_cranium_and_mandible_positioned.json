@@ -1,0 +1,74 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "https://example.org/iiif/3d/a_cranium_and_mandible_positioned.json",
+  "type": "Manifest",
+  "label": { "en": ["Whale Cranium and Mandible Positioned"] },
+  "summary": { "en": ["Renders two 3D models to display a whale skull. Viewer should render the mandible at (0, 0.03, 0.05) and the cranium at (0, 0.18, 0). This should place the cranium and mandible in something approximating anatomical position relative to each other."] },
+  "items": [
+    {
+      "id": "https://example.org/iiif/scene1/page/p1/1",
+      "type": "Scene",
+      "label": { "en": ["A Scene Containing a Whale Cranium and Mandible"] },
+      "items": [
+        {
+          "id": "https://example.org/iiif/scene1/page/p1/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/iiif/3d/anno1",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/whale/whale_cranium.glb",
+                "type": "Model"
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 0.0,
+                    "y": 0.03,
+                    "z": 0.05
+                  }
+                ]
+              }
+            },
+            {
+              "id": "https://example.org/iiif/3d/anno2",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/whale/whale_mandible.glb",
+                "type": "Model"
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 0.0,
+                    "y": 0.18,
+                    "z": 0.0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
