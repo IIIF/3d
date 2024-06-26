@@ -19,7 +19,7 @@
               "type": "Annotation",
               "motivation": ["painting"],
               "body": {
-                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/whale/whale_cranium.glb",
+                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/whale/whale_mandible.glb",
                 "type": "Model"
               },
               "target": {
@@ -45,7 +45,7 @@
               "type": "Annotation",
               "motivation": ["painting"],
               "body": {
-                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/whale/whale_mandible.glb",
+                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/whale/whale_cranium.glb",
                 "type": "Model"
               },
               "target": {
