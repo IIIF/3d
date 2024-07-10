@@ -70,7 +70,7 @@
               "id": "https://example.org/iiif/3d/anno3",
               "type": "Annotation",
               "motivation": ["commenting"],
-              "body": "Right pterygoid hamulus",
+              "bodyValue": "Right pterygoid hamulus",
               "target": {
                 "type": "SpecificResource",
                 "source": [
@@ -93,7 +93,7 @@
               "id": "https://example.org/iiif/3d/anno4",
               "type": "Annotation",
               "motivation": ["commenting"],
-              "body": "Foramen magnum",
+              "bodyValue": "Foramen magnum",
               "target": {
                 "type": "SpecificResource",
                 "source": [
