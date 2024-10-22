@@ -64,10 +64,6 @@ As with other containers in IIIF, Annotations are used to target the Scene to pl
 
 A Camera provides a view of a region of the Scene's space from a particular position within the Scene; the client constructs a viewport into the Scene and uses the view of one or more Cameras to render that region. The size and aspect ratio of the viewport is client and device dependent.
 
-<div style="background: #A0F0A0; padding: 10px; padding-left: 30px; margin-bottom: 10px">
-❓Does this prevent extension cameras from requiring a fixed aspect ratio? 
-</div>
-
 This specification defines two types of Camera:
 
 | Class               | Description  |
@@ -244,9 +240,7 @@ It is useful to be able to rotate a light or camera resource such that it is fac
 
 If the value is a PointSelector, then the light or camera resource is rotated around the x and y axes such that it is facing the given point. If the value is an Annotation which targets a point via a PointSelector, URI fragment or other mechanism, then the direction the resource is facing that point.
 
-<div style="background: #A0F0A0; padding: 10px; padding-left: 30px; margin-bottom: 10px">
-❓What happens if the Annotation targets a Polygon or other non-Point? Calculate centroid? Error? First point given in the Poly / center of a sphere?
-</div>
+If the value is an Annotation, and the resource being painted into the Scene is not a point, then the point for the camera to look at is client dependent. One option is to calculate the centroid point of the target.
 
 This rotation happens after the resource has been added to the Scene, and thus after any transforms have taken place in the local coordinate space. As the z axis is not affected by the rotation, any RotateTransform that changes z will be retained, but any change to x or y will be lost.
 
