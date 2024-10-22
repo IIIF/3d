@@ -427,7 +427,7 @@ It is an error to select a temporal region of a Scene that does not have a `dura
 
 This property sets the background color behind any painted resources on a Canvas or Scene.
 
-The value _MUST_ be string, which defines an RGB color. It SHOULD be a hex value starting with "#" and is treated in a case-insensitive fashion. The value _MAY_ have 8 digits, in order to specify transparency in the RGBA format. Transparency is only useful for the background color of a Canvas that is painted into a Scene. If this property is not specified, then the default value is client-dependent.
+The value _MUST_ be string, which defines a color. It SHOULD be a hex value starting with "#" and is treated in a case-insensitive fashion. The value _MAY_ have 8 digits, in order to specify transparency in the RGBA format. Transparency is only useful for the background color of a Canvas that is painted into a Scene. If this property is not specified, then the default value is client-dependent.
 
 
  * A Canvas _MAY_ have the `backgroundColor` property<br/>
@@ -437,7 +437,7 @@ The value _MUST_ be string, which defines an RGB color. It SHOULD be a hex value
  * Other resources _MUST NOT_ have the `backgroundColor` property.
 
 ```json
-"backgroundColor": "#FFFFFF"
+"backgroundColor": "#FFFFFF00"
 ```
 
 
