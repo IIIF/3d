@@ -425,9 +425,10 @@ It is an error to select a temporal region of a Scene that does not have a `dura
 
 ##### backgroundColor
 
-This property sets the background color behind any painted resources on a spatial resource, such as a Canvas or Scene.
+This property sets the background color behind any painted resources on a Canvas or Scene.
 
-The value _MUST_ be string, which defines an RGB color. It SHOULD be a hex value starting with "#" and is treated in a case-insensitive fashion. If this property is not specified, then the default value is client-dependent.
+The value _MUST_ be string, which defines an RGB color. It SHOULD be a hex value starting with "#" and is treated in a case-insensitive fashion. The value _MAY_ have 8 digits, in order to specify transparency in the RGBA format. Transparency is only useful for the background color of a Canvas that is painted into a Scene. If this property is not specified, then the default value is client-dependent.
+
 
  * A Canvas _MAY_ have the `backgroundColor` property<br/>
    Clients _SHOULD_ render `backgroundColor` on any resource type.
@@ -439,9 +440,6 @@ The value _MUST_ be string, which defines an RGB color. It SHOULD be a hex value
 "backgroundColor": "#FFFFFF"
 ```
 
-<div style="background: #A0F0A0; padding: 10px; padding-left: 30px; margin-bottom: 10px">
-❓Can you set bgColor on a transparent image? An area? Conflict with `style` on a SpecificResource?
-</div>
 
 ##### near
 
