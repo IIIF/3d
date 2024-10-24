@@ -439,6 +439,8 @@ The value _MUST_ be string, which defines a color. It _MUST_ be a value starting
 "backgroundColor": "#FFFFFF00"
 ```
 
+!!! Color should be defined in one place and then referenced
+
 
 ##### near
 
