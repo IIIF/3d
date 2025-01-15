@@ -1,6 +1,6 @@
 {
   "@context": "http://iiif.io/api/presentation/4/context.json",
-  "id": "https://example.org/iiif/3d/g_content_states.json",
+  "id": "https://example.org/iiif/3d/whale_comment_scope_content_state.json",
   "type": "Manifest",
   "label": { "en": ["Whale Cranium and Mandible with Dynamic Commenting Annotations and Custom Per-Anno Views"] },
   "summary": { "en": ["Description TBA"] },

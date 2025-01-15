@@ -1,6 +1,6 @@
 {
   "@context": "http://iiif.io/api/presentation/4/context.json",
-  "id": "https://example.org/iiif/3d/a_cranium_and_mandible_positioned.json",
+  "id": "https://example.org/iiif/3d/whale_comment_point_polygon.json",
   "type": "Manifest",
   "label": { "en": ["Whale Cranium and Mandible with Point and 2D Shape Comment Annotations"] },
   "summary": { "en": ["Multiple commenting annotations with camera view. Viewer should render the mandible at (0, 0.03, 0.05) and the cranium at (0, 0.18, 0). This should place the cranium and mandible in something approximating anatomical position relative to each other. A first commenting annotation for the hook-like process on the right medial pterygoid plate, the right pterygoid hamulus process, should be placed at (0.04, 0.063, -0.066). A second commenting annotation for a 2D polygon outlining the foramen magnum, the large hole through which the spinal cord passes, should also be rendered. Both commenting annotations are intentionally awkwardly placed in terms of view perspective. A camera has been specified and should be used to see both commenting annotations clearly."] },

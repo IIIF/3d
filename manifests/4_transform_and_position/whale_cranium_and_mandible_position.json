@@ -1,6 +1,6 @@
 {
   "@context": "http://iiif.io/api/presentation/4/context.json",
-  "id": "https://example.org/iiif/3d/a_cranium_and_mandible_positioned.json",
+  "id": "https://example.org/iiif/3d/whale_cranium_and_mandible_position.json",
   "type": "Manifest",
   "label": { "en": ["Whale Cranium and Mandible Positioned"] },
   "summary": { "en": ["Renders two 3D models to display a whale skull. Viewer should render the mandible at (0, 0.03, 0.05) and the cranium at (0, 0.18, 0). This should place the cranium and mandible in something approximating anatomical position relative to each other."] },
