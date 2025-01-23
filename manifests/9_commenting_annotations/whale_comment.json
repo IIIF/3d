@@ -1,0 +1,98 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "https://example.org/iiif/3d/whale_comment.json",
+  "type": "Manifest",
+  "label": { "en": ["Whale Cranium and Mandible with Point Comment Annotation"] },
+  "summary": { "en": ["Simple text comment on point on whale cranium. Viewer should render the mandible at (0, 0.03, 0.05) and the cranium at (0, 0.18, 0). This should place the cranium and mandible in something approximating anatomical position relative to each other. A commenting annotation for the hook-like process on the right medial pterygoid plate, the right pterygoid hamulus process, should be placed at (0.04, 0.063, -0.066). This commenting annotation is on the underside of the cranium (basicranium) between the cranium and the mandible, and is intentionally awkwardly placed in terms of view perspective."] },
+  "items": [
+    {
+      "id": "https://example.org/iiif/scene1",
+      "type": "Scene",
+      "label": { "en": ["A Scene Containing a Whale Cranium and Mandible"] },
+      "items": [
+        {
+          "id": "https://example.org/iiif/scene1/page/p1/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/iiif/3d/anno1",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/whale/whale_mandible.glb",
+                "type": "Model"
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 0.0,
+                    "y": 0.03,
+                    "z": 0.05
+                  }
+                ]
+              }
+            },
+            {
+              "id": "https://example.org/iiif/3d/anno2",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/whale/whale_cranium.glb",
+                "type": "Model"
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 0.0,
+                    "y": 0.18,
+                    "z": 0.0
+                  }
+                ]
+              }
+            },
+            {
+              "id": "https://example.org/iiif/3d/anno3",
+              "type": "Annotation",
+              "motivation": ["commenting"],
+              "bodyValue": "Right pterygoid hamulus",
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 0.040,
+                    "y": 0.063,
+                    "z": -0.066
+                  }
+                ]
+                
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

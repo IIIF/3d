@@ -1,0 +1,161 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "https://example.org/iiif/3d/whale_comment_point_polygon.json",
+  "type": "Manifest",
+  "label": { "en": ["Whale Cranium and Mandible with Point and 2D Shape Comment Annotations"] },
+  "summary": { "en": ["Multiple commenting annotations with camera view. Viewer should render the mandible at (0, 0.03, 0.05) and the cranium at (0, 0.18, 0). This should place the cranium and mandible in something approximating anatomical position relative to each other. A first commenting annotation for the hook-like process on the right medial pterygoid plate, the right pterygoid hamulus process, should be placed at (0.04, 0.063, -0.066). A second commenting annotation for a 2D polygon outlining the foramen magnum, the large hole through which the spinal cord passes, should also be rendered. Both commenting annotations are intentionally awkwardly placed in terms of view perspective. A camera has been specified and should be used to see both commenting annotations clearly."] },
+  "items": [
+    {
+      "id": "https://example.org/iiif/scene1",
+      "type": "Scene",
+      "label": { "en": ["A Scene Containing a Whale Cranium and Mandible"] },
+      "items": [
+        {
+          "id": "https://example.org/iiif/scene1/page/p1/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/iiif/3d/anno1",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/whale/whale_mandible.glb",
+                "type": "Model"
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 0.0,
+                    "y": 0.03,
+                    "z": 0.05
+                  }
+                ]
+              }
+            },
+            {
+              "id": "https://example.org/iiif/3d/anno2",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/whale/whale_cranium.glb",
+                "type": "Model"
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 0.0,
+                    "y": 0.18,
+                    "z": 0.0
+                  }
+                ]
+              }
+            },
+            {
+              "id": "https://example.org/iiif/3d/anno3",
+              "type": "Annotation",
+              "motivation": ["commenting"],
+              "bodyValue": "Right pterygoid hamulus",
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 0.040,
+                    "y": 0.063,
+                    "z": -0.066
+                  }
+                ]
+              }
+            },
+            {
+              "id": "https://example.org/iiif/3d/anno4",
+              "type": "Annotation",
+              "motivation": ["commenting"],
+              "bodyValue": "Foramen magnum",
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "WKTSelector",
+                    "value": "POLYGON Z ((0 0.18 -0.23, -0.03 0.16 -0.23, -0.015 0.12 -0.23, 0.006 0.12 -0.23, 0.027 0.16 -0.230))"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "https://example.org/iiif/3d/anno5",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/3d/cameras/1",
+                    "type": "PerspectiveCamera",
+                    "label": {"en": ["Perspective Camera Pointed At Pterygoid Hamulus"]},
+                    "fieldOfView": 50.0,
+                    "near": 0.10,
+                    "far": 2000.0
+                  }
+                ],
+                "transform": [
+                  {
+                    "type": "RotateTransform",
+                    "x": -15.0,
+                    "y": 215.0,
+                    "z": 0.0
+                  }
+                ]
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": -0.25,
+                    "y": 0.0,
+                    "z": -0.5
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
