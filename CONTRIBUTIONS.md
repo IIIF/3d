@@ -1,6 +1,6 @@
 ## Jekyll FAQ
 
-* To add a milestone directory for example manifests:
+### To add a milestone directory for example manifests:
 
 1. Add a directory in `manifests/`
 2. Add an entry in `_data/manifests.yml` for example:
@@ -19,7 +19,8 @@ layout: manifest
 ```
 4. Add any example manifests to that directory. The label and and summary will show on the manifest page. 
 
-* To add a screenshot for a viewer to a particular manifest add the following to the front matter of the README.md file:
+### To add a screenshot for a viewer to a particular manifest add the following to the front matter of the README.md file:
+
 
 ```
 ---
@@ -34,7 +35,7 @@ examples:
 
 Where screenshot.png and screenshot2.png are in the directory with the manifest. 
 
-* Add a viewer
+### Add a viewer
 
 Add a viewer to the `_data/viewers.yml` file that looks like this:
 
