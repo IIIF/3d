@@ -1,0 +1,98 @@
+---
+layout: post
+---
+
+<script>
+    function createOrGetLinks(filename) {
+        const container = document.getElementById(filename);
+        let links = document.getElementById("links-" + filename);
+        if (links === null) {
+            links = document.createElement('p');
+            links.id = "links-" + filename;
+            container.appendChild(links);
+        }
+        return links;
+    }
+
+    function showmanifest(filename) {
+         // Fetch and load the JSON file
+        fetch(filename)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json(); // Parse the JSON response
+            })
+            .then(data => {
+                console.log('Loaded JSON:', data);
+
+                // Example: Render the data in the DOM
+                const container = document.getElementById(filename);
+                const element = document.createElement('h3');
+                element.textContent = `${data.label.en[0]}`;
+                container.prepend(element);
+
+                const location = window.location.href;
+                const manifest = location.substring(0, location.lastIndexOf("/")) + "/" + filename;
+
+                const links = createOrGetLinks(filename);
+
+                const link = document.createElement('a');
+                link.href = manifest;
+                link.textContent = `${filename}`;
+                links.prepend(link);
+
+                const element2 = document.createElement('p');
+                element2.textContent = `${data.summary.en[0]}`;
+                container.appendChild(element2);
+                })
+            .catch(error => {
+                console.error('Error loading JSON:', error);
+            });
+    }
+
+    function addViewerLinks(viewer, filename) {
+        const links = createOrGetLinks(filename);
+
+        const location = window.location.href;
+        const manifest = location.substring(0, location.lastIndexOf("/")) + "/" + filename;
+
+        links.appendChild(document.createTextNode(" | "));
+
+        const link = document.createElement('a');
+        link.href = viewer.url.replace("##manifest##", manifest);
+        link.textContent = viewer.name;
+        links.appendChild(link);
+    }
+</script>    
+{% assign dir = page.dir | replace: "/manifests/","" |replace: "/","" %}
+{% assign milestone = site.data.milestones | where: "dir", dir | first %}
+<h2><a href="../">Milestones</a></h2>
+
+<h2>{{ milestone.name }}</h2>
+<p>{{milestone.desc}}</p>
+
+ {% for file in site.static_files %}
+    {% if file.path contains page.dir and file.name contains ".json" %}
+<div id="{{file.name}}">
+    <script>
+        showmanifest("{{file.name}}");
+{% for viewer in site.data.viewers %}
+        viewer = {
+            name: "{{ viewer.name }}",
+            url: "{{viewer.url}}"
+        }
+        addViewerLinks(viewer, "{{file.name}}");
+{% endfor %}
+    </script>
+</div>
+<div>
+        {% if page.examples[file.name] %}    
+<b>Screenshots:</b><br/><br/>    
+            {% for screenshot in page.examples[file.name]%} 
+<a href="{{screenshot}}" target="_blank"><img src="{{screenshot}}" style="height:150px"/></a>
+            {% endfor %}   
+</div>
+        {% endif %}
+    {% endif %}
+{% endfor %}
