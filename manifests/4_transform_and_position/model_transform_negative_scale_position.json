@@ -20,7 +20,8 @@
               "motivation": ["painting"],
               "body": {
                 "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/astronaut/astronaut.glb",
-                "type": "Model"
+                "type": "Model",
+                "format": "model/gltf-binary"
               },
               "target": {
                 "type": "SpecificResource",
@@ -50,7 +51,7 @@
                   {
                     "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/astronaut/astronaut.glb",
                     "type": "Model",
-                    "format": "application/glb"
+                    "format": "model/gltf-binary"
                   }
                 ],
                 "transform": [
