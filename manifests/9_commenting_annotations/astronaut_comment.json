@@ -24,54 +24,6 @@
                 "format": "model/gltf-binary"
               },
               "target": "https://example.org/iiif/scene1/page/p1/1"
-            },
-            {
-              "id": "https://example.org/iiif/3d/anno2",
-              "type": "Annotation",
-              "motivation": ["commenting"],
-              "bodyValue": "Glove",
-              "target": {
-                "type": "SpecificResource",
-                "source": [
-                  {
-                    "id": "https://example.org/iiif/scene1/page/p1/1",
-                    "type": "Scene"
-                  }
-                ],
-                "selector": [
-                  {
-                    "type": "PointSelector",
-                    "x": 1.075,
-                    "y": 1.894,
-                    "z": 0.204
-                  }
-                ]
-                
-              }
-            },
-            {
-              "id": "https://example.org/iiif/3d/anno2",
-              "type": "Annotation",
-              "motivation": ["commenting"],
-              "bodyValue": "Helmet",
-              "target": {
-                "type": "SpecificResource",
-                "source": [
-                  {
-                    "id": "https://example.org/iiif/scene1/page/p1/1",
-                    "type": "Scene"
-                  }
-                ],
-                "selector": [
-                  {
-                    "type": "PointSelector",
-                    "x": 0.006,
-                    "y": 3.498,
-                    "z": 0.703
-                  }
-                ]
-                
-              }
             }
           ]
         }
@@ -102,7 +54,6 @@
                     "z": 0.204
                   }
                 ]
-                
               }
             },
             {
@@ -126,7 +77,6 @@
                     "z": 0.703
                   }
                 ]
-                
               }
             }
           ]
