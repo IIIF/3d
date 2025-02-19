@@ -20,7 +20,8 @@
               "motivation": ["painting"],
               "body": {
                 "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/astronaut/astronaut.glb",
-                "type": "Model"
+                "type": "Model",
+                "format": "model/gltf-binary"
               },
               "target": "https://example.org/iiif/scene1/page/p1/1"
             },
