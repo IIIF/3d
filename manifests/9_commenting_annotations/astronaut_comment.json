@@ -2,8 +2,8 @@
   "@context": "http://iiif.io/api/presentation/4/context.json",
   "id": "https://example.org/iiif/3d/astronaut_comment.json",
   "type": "Manifest",
-  "label": { "en": ["Single Model"] },
-  "summary": { "en": ["Viewer should render the model at the scene origin, and then viewer should add default lighting and camera"] },
+  "label": { "en": ["Single Model with Comment Annotations"] },
+  "summary": { "en": ["Viewer should render the model at the scene origin and two comment annotations, one targeting a point near the astronaut's glove and the other targeting a point near the astronaut's helmet."] },
   "items": [
     {
       "id": "https://example.org/iiif/scene1/page/p1/1",
