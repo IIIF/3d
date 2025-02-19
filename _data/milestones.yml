@@ -1,0 +1,27 @@
+- name: Place Model in 3D Scene 
+  dir: 1_basic_model_in_scene
+  desc: Manifests in this group place a single model in a 3D scene.
+- name: Cameras
+  dir: 2_cameras
+  desc: Manifests in this group place one or more cameras in association with a model in a 3D scene.
+- name: Lights
+  dir: 3_lights
+  desc: Manifests in this group place one or more lights along with camera(s) and a model in a 3D scene. 
+- name: Transform and Position
+  dir: 4_transform_and_position
+  desc: Manifests in this group transform (translate, rotate, and/or scale) models and position them at specific coordinates with a 3D scene.
+- name: Nesting Canvases and Scenes within Scene
+  dir: 5_nesting
+  desc: Manifests in this group use multiple scenes or one or more canvases along with a scene and nest canvases or scenes within an overall inclusive scene.
+- name: 2D Canvases in Scenes
+  dir: 6_2d_canvases_in_scene
+  desc: Manifests in this group expand on milestone group 5 by placing 2D canvases in scenes in more advanced ways. 
+- name: Excluding Elements from Presentation
+  dir: 7_excluding_model_features
+  desc: Manifests in this group exclude elements like cameras and lights from being actively displayed in a 3D scene. 
+- name: Scenes with Duration
+  dir: 8_scenes_with_duration
+  desc: Manifests in this group feature scenes and scene elements with duration, turning elements on and off at certain time durations for the Scene.
+- name: Commenting Annotations
+  dir: 9_commenting_annotations
+  desc: Manifests in this group feature commenting annotations describing the 3D scene.

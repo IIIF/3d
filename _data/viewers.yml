@@ -1,0 +1,2 @@
+- name: IIIF 3D viewer
+  url: https://example.com/iiif/?iiif-content=##manifest##
