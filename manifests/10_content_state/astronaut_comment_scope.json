@@ -68,20 +68,15 @@
                         "type": "Annotation",
                         "motivation": ["painting"],
                         "body": {
-                          "type": "SpecificResource",
-                          "source": [
-                            {
-                              "id": "https://example.org/iiif/3d/cameras/1",
-                              "type": "PerspectiveCamera",
-                              "label": {"en": ["Perspective Camera for Glove"]},
-                              "lookAt": {
-                                "type": "PointSelector",
-                                "x": 0.0,
-                                "y": 2.0108470916748047,
-                                "z": -0.012333005666732798
-                              }
-                            }
-                          ]
+                          "id": "https://example.org/iiif/3d/cameras/1",
+                          "type": "PerspectiveCamera",
+                          "label": {"en": ["Perspective Camera for Glove"]},
+                          "lookAt": {
+                            "type": "PointSelector",
+                            "x": 0.0,
+                            "y": 2.0108470916748047,
+                            "z": -0.012333005666732798
+                          }
                         },
                         "target": {
                           "type": "SpecificResource",
@@ -129,7 +124,7 @@
                 ],
                 "scope": {
                   "@context": "http://iiif.io/api/presentation/4/context.json",
-                  "id": "https://example.org/iiif/3d/anno2/scope1",
+                  "id": "https://example.org/iiif/3d/anno3/scope1",
                   "type": "Annotation",
                   "motivation": ["contentState"],
                   "target": {
@@ -137,24 +132,19 @@
                     "type": "Scene",
                     "items": [
                       {
-                        "id": "https://example.org/iiif/3d/anno2/scope1/anno1",
+                        "id": "https://example.org/iiif/3d/anno3/scope1/anno1",
                         "type": "Annotation",
                         "motivation": ["painting"],
                         "body": {
-                          "type": "SpecificResource",
-                          "source": [
-                            {
-                              "id": "https://example.org/iiif/3d/cameras/1",
-                              "type": "PerspectiveCamera",
-                              "label": {"en": ["Perspective Camera for Helmet"]},
-                              "lookAt": {
-                                "type": "PointSelector",
-                                "x": 0.0,
-                                "y": 2.0108470916748047,
-                                "z": -0.012333005666732798
-                              }
-                            }
-                          ]
+                          "id": "https://example.org/iiif/3d/cameras/2",
+                          "type": "PerspectiveCamera",
+                          "label": {"en": ["Perspective Camera for Helmet"]},
+                          "lookAt": {
+                            "type": "PointSelector",
+                            "x": 0.0,
+                            "y": 2.0108470916748047,
+                            "z": -0.012333005666732798
+                          }
                         },
                         "target": {
                           "type": "SpecificResource",
