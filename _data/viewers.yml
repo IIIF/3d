@@ -1,2 +1,4 @@
 - name: MorphoSource
   url: https://www.morphosource.org/uv/uv.html#?manifest=##manifest##
+- name: Voyager
+  url: https://smithsonian.github.io/dpo-voyager/docs/iiif_demo?document=##manifest##
