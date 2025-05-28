@@ -61,6 +61,7 @@ layout: post
 
         const link = document.createElement('a');
         link.href = viewer.url.replace("##manifest##", manifest);
+        link.target = "_blank";
         link.textContent = viewer.name;
         links.appendChild(link);
     }
