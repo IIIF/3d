@@ -2,3 +2,5 @@
   url: https://www.morphosource.org/uv/uv.html#?manifest=##manifest##
 - name: Voyager
   url: https://smithsonian.github.io/dpo-voyager/docs/iiif_demo?document=##manifest##
+- name: Universal Viewer
+  url: https://uv-v4.netlify.app/#?manifest=##manifest##
