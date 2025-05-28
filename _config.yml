@@ -22,7 +22,7 @@ title: IIIF 3D TSG Working Space
 description: >- # this means to ignore newlines until "baseurl:"
   This repository contains issues recording discussions and progress on tasks for the 
   IIIF 3D Technical Specification Group.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/3d" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  IIIF
 
