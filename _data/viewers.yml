@@ -4,3 +4,5 @@
   url: https://smithsonian.github.io/dpo-voyager/docs/iiif_demo?document=##manifest##
 - name: Universal Viewer
   url: https://uv-v4.netlify.app/#?manifest=##manifest##
+- name: X3DOM Viewer
+  url: https://spri-open-resources.s3.us-east-2.amazonaws.com/iiif3dtsg/manifest/index.html#?manifest=##manifest##
