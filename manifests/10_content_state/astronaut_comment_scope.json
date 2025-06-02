@@ -83,6 +83,7 @@
                               "type": "PerspectiveCamera",
                               "label": {"en": ["Perspective Camera for Glove"]},
                               "lookAt": {
+                                "id": "https://example.org/uuid/6799e7d1-89a1-4e76-bcb9-3c0c47065598",
                                 "type": "PointSelector",
                                 "x": 0.0,
                                 "y": 2.0108470916748047,
@@ -166,6 +167,7 @@
                               "type": "PerspectiveCamera",
                               "label": {"en": ["Perspective Camera for Helmet"]},
                               "lookAt": {
+                                "id": "https://example.org/uuid/80ace027-d43d-48f2-81dc-59bfed7b61cc",
                                 "type": "PointSelector",
                                 "x": 0.0,
                                 "y": 2.0108470916748047,
