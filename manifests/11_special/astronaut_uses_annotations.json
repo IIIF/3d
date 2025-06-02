@@ -135,11 +135,11 @@
                     "y": 1.894,
                     "z": 0.204
                   }
-                ],
-                "usesAnnotations": [
-                  "https://example.org/iiif/3d/anno2/scope1/anno1"
                 ]
-              }
+              },
+              "usesAnnotations": [
+                  "https://example.org/iiif/3d/anno2/scope1/anno1"
+              ]
             },
             {
               "id": "https://example.org/iiif/3d/anno3",
@@ -169,11 +169,11 @@
                     "y": 3.498,
                     "z": 0.703
                   }
-                ],
-                "usesAnnotations": [
-                  "https://example.org/iiif/3d/anno3/scope1/anno1"
                 ]
-              }
+              },
+              "usesAnnotations": [
+                "https://example.org/iiif/3d/anno3/scope1/anno1"
+              ]
             }
           ]
         }
