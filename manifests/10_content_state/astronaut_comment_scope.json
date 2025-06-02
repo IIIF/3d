@@ -37,8 +37,15 @@
               "id": "https://example.org/iiif/3d/anno2",
               "type": "Annotation",
               "motivation": ["commenting"],
-              "bodyValue": "Glove",
+              "body": {
+                "id": "https://example.org/iiif/3d/anno2/bodies/glove",
+                "type": "TextualBody",
+                "value": "Glove",
+                "language": "en",
+                "format": "text/plain"
+              },
               "target": {
+                "id": "https://example.org/uuid/ab7f9b03-2c13-416c-85d8-13e4ef6d6a3b",
                 "type": "SpecificResource",
                 "source": [
                   {
@@ -48,6 +55,7 @@
                 ],
                 "selector": [
                   {
+                    "id": "https://example.org/uuid/bfa9c562-3480-4605-aa60-fff02a1d6716",
                     "type": "PointSelector",
                     "x": 1.075,
                     "y": 1.894,
@@ -55,7 +63,6 @@
                   }
                 ],
                 "scope": {
-                  "@context": "http://iiif.io/api/presentation/4/context.json",
                   "id": "https://example.org/iiif/3d/anno2/scope1",
                   "type": "Annotation",
                   "motivation": ["contentState"],
@@ -64,37 +71,45 @@
                     "type": "Scene",
                     "items": [
                       {
-                        "id": "https://example.org/iiif/3d/anno2/scope1/anno1",
-                        "type": "Annotation",
-                        "motivation": ["painting"],
-                        "body": {
-                          "id": "https://example.org/iiif/3d/cameras/1",
-                          "type": "PerspectiveCamera",
-                          "label": {"en": ["Perspective Camera for Glove"]},
-                          "lookAt": {
-                            "type": "PointSelector",
-                            "x": 0.0,
-                            "y": 2.0108470916748047,
-                            "z": -0.012333005666732798
+                        "id": "https://example.org/iiif/scene1/page/p3/1",
+                        "type": "AnnotationPage",
+                        "items": [
+                          {
+                            "id": "https://example.org/iiif/3d/anno2/scope1/anno1",
+                            "type": "Annotation",
+                            "motivation": ["painting"],
+                            "body": {
+                              "id": "https://example.org/iiif/3d/cameras/1",
+                              "type": "PerspectiveCamera",
+                              "label": {"en": ["Perspective Camera for Glove"]},
+                              "lookAt": {
+                                "type": "PointSelector",
+                                "x": 0.0,
+                                "y": 2.0108470916748047,
+                                "z": -0.012333005666732798
+                              }
+                            },
+                            "target": {
+                              "id": "https://example.org/uuid/48350b8f-be54-4a20-990e-80b596efbb36",
+                              "type": "SpecificResource",
+                              "source": [
+                                {
+                                  "id": "https://example.org/iiif/scene1/page/p1/1",
+                                  "type": "Scene"
+                                }
+                              ],
+                              "selector": [
+                                {
+                                  "id": "https://example.org/uuid/1a0f1b38-2ab7-4603-bfc3-353e77f18c93",
+                                  "type": "PointSelector",
+                                  "x": 0.0,
+                                  "y": 2.010847091674805,
+                                  "z": 9.11616179783789
+                                }
+                              ]
+                            }
                           }
-                        },
-                        "target": {
-                          "type": "SpecificResource",
-                          "source": [
-                            {
-                              "id": "https://example.org/iiif/scene1/page/p1/1",
-                              "type": "Scene"
-                            }
-                          ],
-                          "selector": [
-                            {
-                              "type": "PointSelector",
-                              "x": 0.0,
-                              "y": 2.010847091674805,
-                              "z": 9.11616179783789
-                            }
-                          ]
-                        }
+                        ]
                       }
                     ]
                   }
@@ -105,8 +120,15 @@
               "id": "https://example.org/iiif/3d/anno3",
               "type": "Annotation",
               "motivation": ["commenting"],
-              "bodyValue": "Helmet",
+              "bodyValue": {
+                  "id": "https://example.org/iiif/3d/anno3/bodies/helmet",
+                  "type": "TextualBody",
+                  "value": "Helmet",
+                  "language": "en",
+                  "format": "text/plain"
+                },
               "target": {
+                "id": "https://example.org/uuid/8e6a68cd-a5be-4661-acc2-a373f2e749ae",
                 "type": "SpecificResource",
                 "source": [
                   {
@@ -116,6 +138,7 @@
                 ],
                 "selector": [
                   {
+                    "id": "https://example.org/uuid/7f940815-62f7-4d99-99e9-2f2a1ba0e7c8",
                     "type": "PointSelector",
                     "x": 0.006,
                     "y": 3.498,
@@ -123,7 +146,6 @@
                   }
                 ],
                 "scope": {
-                  "@context": "http://iiif.io/api/presentation/4/context.json",
                   "id": "https://example.org/iiif/3d/anno3/scope1",
                   "type": "Annotation",
                   "motivation": ["contentState"],
@@ -132,37 +154,45 @@
                     "type": "Scene",
                     "items": [
                       {
-                        "id": "https://example.org/iiif/3d/anno3/scope1/anno1",
-                        "type": "Annotation",
-                        "motivation": ["painting"],
-                        "body": {
-                          "id": "https://example.org/iiif/3d/cameras/2",
-                          "type": "PerspectiveCamera",
-                          "label": {"en": ["Perspective Camera for Helmet"]},
-                          "lookAt": {
-                            "type": "PointSelector",
-                            "x": 0.0,
-                            "y": 2.0108470916748047,
-                            "z": -0.012333005666732798
+                        "id": "https://example.org/iiif/scene1/page/p3/1",
+                        "type": "AnnotationPage",
+                        "items": [
+                          {
+                            "id": "https://example.org/iiif/3d/anno3/scope1/anno1",
+                            "type": "Annotation",
+                            "motivation": ["painting"],
+                            "body": {
+                              "id": "https://example.org/iiif/3d/cameras/2",
+                              "type": "PerspectiveCamera",
+                              "label": {"en": ["Perspective Camera for Helmet"]},
+                              "lookAt": {
+                                "type": "PointSelector",
+                                "x": 0.0,
+                                "y": 2.0108470916748047,
+                                "z": -0.012333005666732798
+                              }
+                            },
+                            "target": {
+                              "id": "https://example.org/uuid/ea4fcfb0-7341-48e3-a85d-d9c9f2bac5a0",
+                              "type": "SpecificResource",
+                              "source": [
+                                {
+                                  "id": "https://example.org/iiif/scene1/page/p1/1",
+                                  "type": "Scene"
+                                }
+                              ],
+                              "selector": [
+                                {
+                                  "id": "https://example.org/uuid/fa64be77-e766-49f0-a89c-cf1a6b7f5869",
+                                  "type": "PointSelector",
+                                  "x": 0.0,
+                                  "y": 2.010847091674805,
+                                  "z": 9.11616179783789
+                                }
+                              ]
+                            }
                           }
-                        },
-                        "target": {
-                          "type": "SpecificResource",
-                          "source": [
-                            {
-                              "id": "https://example.org/iiif/scene1/page/p1/1",
-                              "type": "Scene"
-                            }
-                          ],
-                          "selector": [
-                            {
-                              "type": "PointSelector",
-                              "x": 0.0,
-                              "y": 2.010847091674805,
-                              "z": 9.11616179783789
-                            }
-                          ]
-                        }
+                        ]
                       }
                     ]
                   }
