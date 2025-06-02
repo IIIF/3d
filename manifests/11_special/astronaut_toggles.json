@@ -26,7 +26,7 @@
               "target": "https://example.org/iiif/scene1/page/p1/1"
             },
             {
-              "id": "https://example.org/iiif/3d/anno2/scope1/anno1",
+              "id": "https://example.org/iiif/3d/anno2",
               "type": "Annotation",
               "behavior": ["hidden"],
               "motivation": ["painting"],
@@ -63,7 +63,7 @@
               }
             },
             {
-              "id": "https://example.org/iiif/3d/anno3/scope1/anno1",
+              "id": "https://example.org/iiif/3d/anno3",
               "type": "Annotation",
               "behavior": ["hidden"],
               "motivation": ["painting"],
@@ -108,11 +108,11 @@
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://example.org/iiif/3d/anno2",
+              "id": "https://example.org/iiif/3d/anno4",
               "type": "Annotation",
               "motivation": ["commenting"],
               "body": {
-                "id": "https://example.org/iiif/3d/anno2/bodies/glove",
+                "id": "https://example.org/iiif/3d/anno4/bodies/glove",
                 "type": "TextualBody",
                 "value": "Glove",
                 "language": "en",
@@ -137,16 +137,16 @@
                   }
                 ]
               },
-              "usesAnnotations": [
-                  "https://example.org/iiif/3d/anno2/scope1/anno1"
+              "toggles": [
+                  "https://example.org/iiif/3d/anno2"
               ]
             },
             {
-              "id": "https://example.org/iiif/3d/anno3",
+              "id": "https://example.org/iiif/3d/anno5",
               "type": "Annotation",
               "motivation": ["commenting"],
               "bodyValue": {
-                  "id": "https://example.org/iiif/3d/anno3/bodies/helmet",
+                  "id": "https://example.org/iiif/3d/anno5/bodies/helmet",
                   "type": "TextualBody",
                   "value": "Helmet",
                   "language": "en",
@@ -171,8 +171,8 @@
                   }
                 ]
               },
-              "usesAnnotations": [
-                "https://example.org/iiif/3d/anno3/scope1/anno1"
+              "toggles": [
+                "https://example.org/iiif/3d/anno3"
               ]
             }
           ]
