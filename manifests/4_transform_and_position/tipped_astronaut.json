@@ -1,0 +1,68 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "https://example.org/iiif/3d/model_origin.json",
+  "type": "Manifest",
+  "label": { "en": ["glTF rotation property demonstration"] },
+  "summary": { "en": ["Astronaut with rotation property defined in glb file"] },
+  "items": [
+    {
+      "id": "https://example.org/iiif/scene1/page/p1/1",
+      "type": "Scene",
+      "label": { "en": ["A Scene"] },
+      "items": [
+        {
+          "id": "https://example.org/iiif/scene1/page/p1/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/iiif/3d/anno2",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/astronaut/tipped_astronaut.glb",
+                "type": "Model",
+                "format": "model/gltf-binary"
+                },
+              "target": "https://example.org/iiif/scene1/page/p1/1"
+            },
+            {
+              "id": "https://example.org/iiif/3d/anno1",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/lamp_post/lamp_post.glb",
+                "type": "Model",
+                "format": "model/gltf-binary",
+                "rights" : "https://creativecommons.org/licenses/by/4.0/",
+                "metadata" : [
+                    {
+                        "label": { "en": [ "Attribution" ] },
+                        "value": { "none": [ "https://sketchfab.com/3d-models/old-fashioned-streetlamp-e98ebb84f03142618eb958817fe86967" ] }
+                    }
+                ]
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": -1.5,
+                    "y": 0.0,
+                    "z": 0.0
+                  }
+                ]
+              }
+            }
+            
+          ]
+        }
+      ]
+    }
+  ]
+}
