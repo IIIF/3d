@@ -67,7 +67,15 @@
                   }
                 ]
               }
-            },
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "https://example.org/iiif/scene1/page/p2/1",
+          "type": "AnnotationPage",
+          "items": [
             {
               "id": "https://example.org/iiif/3d/anno3",
               "type": "Annotation",
@@ -88,8 +96,7 @@
                     "y": 0.063,
                     "z": -0.066
                   }
-                ]
-                
+                ]   
               }
             }
           ]

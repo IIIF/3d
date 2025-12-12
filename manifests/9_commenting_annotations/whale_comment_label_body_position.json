@@ -69,47 +69,6 @@
               }
             },
             {
-              "id": "https://example.org/iiif/3d/anno3",
-              "type": "Annotation",
-              "motivation": ["commenting"],
-              "body": {
-                  "type" : "TextualBody",
-                  "value" : "<p>Right pterygoid hamulus</p>",
-                  "format" : "text/html",
-                  "language" : "en",
-                  "position": {
-                    "type": "SpecificResource",
-                    "source": [{
-                      "id": "https://example.org/iiif/scene1",
-                      "type": "Scene"
-                    }],
-                    "selector": [{
-                      "type": "PointSelector",
-                      "x": 0.040,
-                      "y": 0.0,
-                      "z": -0.066
-                    }]
-                  }
-              },
-              "target": {
-                "type": "SpecificResource",
-                "source": [
-                  {
-                    "id": "https://example.org/iiif/scene1",
-                    "type": "Scene"
-                  }
-                ],
-                "selector": [
-                  {
-                    "type": "PointSelector",
-                    "x": 0.040,
-                    "y": 0.063,
-                    "z": -0.066
-                  }
-                ]
-              }
-            },
-            {
               "id": "https://example.org/iiif/3d/anno4",
               "type": "Annotation",
               "motivation": ["painting"],
@@ -148,6 +107,55 @@
                     "x": -0.25,
                     "y": 0.0,
                     "z": -0.5
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "annotations" : [
+        {
+          "id": "https://example.org/iiif/scene1/page/p2/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/iiif/3d/anno3",
+              "type": "Annotation",
+              "motivation": ["commenting"],
+              "body": {
+                  "type" : "TextualBody",
+                  "value" : "<p>Right pterygoid hamulus</p>",
+                  "format" : "text/html",
+                  "language" : "en",
+                  "position": {
+                    "type": "SpecificResource",
+                    "source": [{
+                      "id": "https://example.org/iiif/scene1",
+                      "type": "Scene"
+                    }],
+                    "selector": [{
+                      "type": "PointSelector",
+                      "x": 0.040,
+                      "y": 0.0,
+                      "z": -0.066
+                    }]
+                  }
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 0.040,
+                    "y": 0.063,
+                    "z": -0.066
                   }
                 ]
               }

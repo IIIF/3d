@@ -92,27 +92,6 @@
               }
             },
             {
-              "id": "https://example.org/iiif/3d/anno4",
-              "type": "Annotation",
-              "motivation": ["commenting"],
-              "bodyValue": "Foramen magnum",
-              "target": {
-                "type": "SpecificResource",
-                "source": [
-                  {
-                    "id": "https://example.org/iiif/scene1",
-                    "type": "Scene"
-                  }
-                ],
-                "selector": [
-                  {
-                    "type": "WKTSelector",
-                    "value": "POLYGON Z ((0 0.18 -0.23, -0.03 0.16 -0.23, -0.015 0.12 -0.23, 0.006 0.12 -0.23, 0.027 0.16 -0.230))"
-                  }
-                ]
-              }
-            },
-            {
               "id": "https://example.org/iiif/3d/anno5",
               "type": "Annotation",
               "motivation": ["painting"],
@@ -151,6 +130,35 @@
                     "x": -0.25,
                     "y": 0.0,
                     "z": -0.5
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "https://example.org/iiif/scene1/page/p2/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/iiif/3d/anno4",
+              "type": "Annotation",
+              "motivation": ["commenting"],
+              "bodyValue": "Foramen magnum",
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "WKTSelector",
+                    "value": "POLYGON Z ((0 0.18 -0.23, -0.03 0.16 -0.23, -0.015 0.12 -0.23, 0.006 0.12 -0.23, 0.027 0.16 -0.230))"
                   }
                 ]
               }
