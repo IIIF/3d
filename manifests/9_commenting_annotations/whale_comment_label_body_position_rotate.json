@@ -69,6 +69,57 @@
               }
             },
             {
+              "id": "https://example.org/iiif/3d/anno4",
+              "type": "Annotation",
+              "motivation": ["painting"],
+              "body": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/3d/cameras/1",
+                    "type": "PerspectiveCamera",
+                    "label": {"en": ["Perspective Camera Pointed At Pterygoid Hamulus"]},
+                    "fieldOfView": 50.0,
+                    "near": 0.10,
+                    "far": 2000.0
+                  }
+                ],
+                "transform": [
+                  {
+                    "type": "RotateTransform",
+                    "x": -15.0,
+                    "y": 215.0,
+                    "z": 0.0
+                  }
+                ]
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": -0.25,
+                    "y": 0.0,
+                    "z": -0.5
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "https://example.org/iiif/scene1/page/p2/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
               "id": "https://example.org/iiif/3d/anno3",
               "type": "Annotation",
               "motivation": ["commenting"],
@@ -111,49 +162,6 @@
                     "x": 0.040,
                     "y": 0.063,
                     "z": -0.066
-                  }
-                ]
-              }
-            },
-            {
-              "id": "https://example.org/iiif/3d/anno4",
-              "type": "Annotation",
-              "motivation": ["painting"],
-              "body": {
-                "type": "SpecificResource",
-                "source": [
-                  {
-                    "id": "https://example.org/iiif/3d/cameras/1",
-                    "type": "PerspectiveCamera",
-                    "label": {"en": ["Perspective Camera Pointed At Pterygoid Hamulus"]},
-                    "fieldOfView": 50.0,
-                    "near": 0.10,
-                    "far": 2000.0
-                  }
-                ],
-                "transform": [
-                  {
-                    "type": "RotateTransform",
-                    "x": -15.0,
-                    "y": 215.0,
-                    "z": 0.0
-                  }
-                ]
-              },
-              "target": {
-                "type": "SpecificResource",
-                "source": [
-                  {
-                    "id": "https://example.org/iiif/scene1",
-                    "type": "Scene"
-                  }
-                ],
-                "selector": [
-                  {
-                    "type": "PointSelector",
-                    "x": -0.25,
-                    "y": 0.0,
-                    "z": -0.5
                   }
                 ]
               }
