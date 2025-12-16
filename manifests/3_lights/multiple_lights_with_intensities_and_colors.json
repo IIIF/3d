@@ -9,7 +9,7 @@
   },
   "summary": {
     "en": [
-        "Viewer should render the model at the scene origin, and then viewer should add two spotlights and an ambient light source, all of different colors. The viewer should add a default camera but NOT any other lighting."
+        "Viewer should render the model at the scene origin, and then viewer should add one red spotlight pointing at the front of the helmet, one blue spotlight point at the front-center of the model, and an ambient green light source. The viewer should add a default camera but NOT any other lighting."
     ]
   },
   "items": [
