@@ -142,7 +142,7 @@
               "id": "https://example.org/iiif/3d/comments/2",
               "type": "Annotation",
               "motivation": ["commenting"],
-              "bodyValue": {
+              "body": {
                   "id": "https://example.org/iiif/3d/comments/2/body",
                   "type": "TextualBody",
                   "value": "Helmet",
