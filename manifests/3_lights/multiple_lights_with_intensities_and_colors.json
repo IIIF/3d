@@ -1,0 +1,196 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "https://example.org/iiif/3d/model_origin.json",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Multiple lights with intensities and colors."
+    ]
+  },
+  "summary": {
+    "en": [
+        "Viewer should render the model at the scene origin, and then viewer should add one red spotlight pointing at the front of the helmet, one blue spotlight point at the front-center of the model, and an ambient green light source. The viewer should add a default camera but NOT any other lighting."
+    ]
+  },
+  "items": [
+    {
+      "id": "https://example.org/iiif/scene1/page/p1/1",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Model with Two Spotlights and an Ambient light"
+        ]
+      },
+      "backgroundColor": "#33404d",
+      "items": [
+        {
+          "id": "https://example.org/iiif/scene1/page/p1/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/iiif/3d/anno1",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "type": "SpecificResource",
+                "source": {
+                  "id": "https://example.org/iiif/3d/lights/1",
+                  "type": "SpotLight",
+                  "label": {
+                    "en": [
+                      "Red Spot Light"
+                    ]
+                  },
+                  "color": "#ff0000",
+                  "intensity": {
+                    "type": "Value",
+                    "value": 100,
+                    "unit": "relative"
+                  },
+                  "angle": 5
+                },
+                "transform": [
+                  {
+                    "type": "RotateTransform",
+                    "x": 90.0,
+                    "y": 0,
+                    "z": 0
+                  },
+                  {
+                    "type": "TranslateTransform",
+                    "x": 0,
+                    "y": 3.5,
+                    "z": 3.5
+                  }
+                ]
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "type": "Scene"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "https://example.org/iiif/3d/anno2",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "type": "SpecificResource",
+                "source": {
+                  "id": "https://example.org/iiif/3d/lights/1",
+                  "type": "AmbientLight",
+                  "label": {
+                    "en": [
+                      "Green Ambient Light"
+                    ]
+                  },
+                  "color": "#7aff40",
+                  "intensity": {
+                    "type": "Value",
+                    "value": 0.5,
+                    "unit": "relative"
+                  }
+                }
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "type": "Scene"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "https://example.org/iiif/3d/anno3",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "type": "SpecificResource",
+                "source": {
+                  "id": "https://example.org/iiif/3d/lights/1",
+                  "type": "SpotLight",
+                  "label": {
+                    "en": [
+                      "Blue Spot Light"
+                    ]
+                  },
+                  "color": "#0f00ff",
+                  "intensity": {
+                    "type": "Value",
+                    "value": 10,
+                    "unit": "relative"
+                  },
+                  "angle": 5
+                },
+                "transform": [
+                  {
+                    "type": "RotateTransform",
+                    "x": 90.0,
+                    "y": 0,
+                    "z": 0
+                  },
+                  {
+                    "type": "TranslateTransform",
+                    "x": 0,
+                    "y": 2.5,
+                    "z": 3.5
+                  }
+                ]
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "type": "Scene"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "https://example.org/iiif/3d/anno4",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "type": "SpecificResource",
+                "source": {
+                  "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/astronaut/astronaut.glb",
+                  "type": "Model",
+                  "label": {
+                    "en": [
+                      "Astronaut"
+                    ]
+                  },
+                  "format": "model/gltf-binary"
+                }
+              },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "type": "Scene"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
