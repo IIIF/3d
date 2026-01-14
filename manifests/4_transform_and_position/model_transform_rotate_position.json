@@ -6,7 +6,7 @@
   "summary": { "en": ["Viewer should render the model rotated by 180 degrees around the Y axis"] },
   "items": [
     {
-      "id": "https://example.org/iiif/scene1/page/p1/1",
+      "id": "https://example.org/iiif/scene1",
       "type": "Scene",
       "label": { "en": ["A Scene"] },
       "items": [
@@ -40,7 +40,7 @@
                 "type": "SpecificResource",
                 "source": [
                   {
-                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "id": "https://example.org/iiif/scene1",
                     "type": "Scene"
                   }
                 ],

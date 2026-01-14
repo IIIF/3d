@@ -6,7 +6,7 @@
   "summary": { "en": ["Viewer should render the model after rotating by 180 degrees around the Y axis, then translating 1 in X, resulting in him being at 1 in X"] },
   "items": [
     {
-      "id": "https://example.org/iiif/scene1/page/p1/1",
+      "id": "https://example.org/iiif/scene1",
       "type": "Scene",
       "label": { "en": ["A Scene"] },
       "items": [
@@ -46,7 +46,7 @@
                 "type": "SpecificResource",
                 "source": [
                   {
-                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "id": "https://example.org/iiif/scene1",
                     "type": "Scene"
                   }
                 ],
