@@ -24,7 +24,10 @@
                 "type": "Model",
                 "format": "model/gltf-binary"
               },
-              "target": "https://example.org/iiif/scene1/page/p1/1"
+              "target": {
+                "id"   : "https://example.org/iiif/scene1/page/p1/1",
+                "type" : "Scene"
+              } 
             }
           ]
         }
