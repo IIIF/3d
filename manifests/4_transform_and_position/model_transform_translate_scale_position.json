@@ -6,7 +6,7 @@
   "summary": { "en": ["Viewer should render the model twice, once at normal scale and once at double scale, and then the viewer should add default lighting and camera"] },
   "items": [
     {
-      "id": "https://example.org/iiif/scene1/page/p1/1",
+      "id": "https://example.org/iiif/scene1",
       "type": "Scene",
       "label": { "en": ["A Scene"] },
       "items": [
@@ -27,7 +27,7 @@
                 "type": "SpecificResource",
                 "source": [
                   {
-                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "id": "https://example.org/iiif/scene1",
                     "type": "Scene"
                   }
                 ],
@@ -67,7 +67,7 @@
                 "type": "SpecificResource",
                 "source": [
                   {
-                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "id": "https://example.org/iiif/scene1",
                     "type": "Scene"
                   }
                 ],

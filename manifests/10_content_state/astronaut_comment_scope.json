@@ -6,7 +6,7 @@
   "summary": { "en": ["Viewer should render the model at the scene origin and two comment annotations, one targeting a point near the astronaut's glove and the other targeting a point near the astronaut's helmet. Each comment annotation has a specific camera position and view specified for it using content state scope for the annotation."] },
   "items": [
     {
-      "id": "https://example.org/iiif/scene1/page/p1/1",
+      "id": "https://example.org/iiif/scene1",
       "type": "Scene",
       "label": { "en": ["A Scene"] },
       "items": [
@@ -23,7 +23,7 @@
                 "type": "Model",
                 "format": "model/gltf-binary"
               },
-              "target": "https://example.org/iiif/scene1/page/p1/1"
+              "target": "https://example.org/iiif/scene1"
             }
           ]
         }
@@ -49,7 +49,7 @@
                 "type": "SpecificResource",
                 "source": [
                   {
-                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "id": "https://example.org/iiif/scene1",
                     "type": "Scene"
                   }
                 ],
@@ -67,7 +67,7 @@
                   "type": "Annotation",
                   "motivation": ["contentState"],
                   "target": {
-                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "id": "https://example.org/iiif/scene1",
                     "type": "Scene",
                     "items": [
                       {
@@ -95,7 +95,7 @@
                               "type": "SpecificResource",
                               "source": [
                                 {
-                                  "id": "https://example.org/iiif/scene1/page/p1/1",
+                                  "id": "https://example.org/iiif/scene1",
                                   "type": "Scene"
                                 }
                               ],
@@ -133,7 +133,7 @@
                 "type": "SpecificResource",
                 "source": [
                   {
-                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "id": "https://example.org/iiif/scene1",
                     "type": "Scene"
                   }
                 ],
@@ -151,7 +151,7 @@
                   "type": "Annotation",
                   "motivation": ["contentState"],
                   "target": {
-                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "id": "https://example.org/iiif/scene1",
                     "type": "Scene",
                     "items": [
                       {
@@ -179,7 +179,7 @@
                               "type": "SpecificResource",
                               "source": [
                                 {
-                                  "id": "https://example.org/iiif/scene1/page/p1/1",
+                                  "id": "https://example.org/iiif/scene1",
                                   "type": "Scene"
                                 }
                               ],

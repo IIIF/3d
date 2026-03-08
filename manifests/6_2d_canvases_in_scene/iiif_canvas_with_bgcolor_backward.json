@@ -1,6 +1,6 @@
 {
   "@context": "http://iiif.io/api/presentation/4/context.json",
-  "id": "https://example.org/iiif/3d/model_origin.json",
+  "id": "https://example.org/iiif/3d/iiif_canvas_with_bgcolor_backward.json",
   "type": "Manifest",
   "label": { "en": ["Scene with a Canvas"] },
   "summary": { "en": ["..."] },
@@ -11,7 +11,7 @@
       "behavior": ["sequence"],
       "items": [
         {
-          "id": "https://example.org/iiif/scene1/page/p1/1",
+          "id": "https://example.org/iiif/scene1",
           "type": "Scene"
         }
       ]
@@ -36,7 +36,7 @@
                 "type": "Model",
                 "format": "model/gltf-binary"
               },
-              "target": "https://example.org/iiif/scene1/page/p1/1"
+              "target": "https://example.org/iiif/scene1"
             },
             {
               "id": "https://example.org/iiif/3d/anno2",
@@ -77,7 +77,7 @@
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://example.org/iiif/3d/anno1",
+              "id": "https://example.org/iiif/3d/p2/anno1",
               "type": "Annotation",
               "motivation": ["painting"],
               "body": {

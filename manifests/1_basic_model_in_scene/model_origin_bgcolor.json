@@ -1,12 +1,12 @@
 {
   "@context": "http://iiif.io/api/presentation/4/context.json",
-  "id": "https://example.org/iiif/3d/model_origin.json",
+  "id": "https://example.org/iiif/3d/model_origin_bgcolor.json",
   "type": "Manifest",
   "label": { "en": ["Single Model with background color"] },
   "summary": { "en": ["Viewer should render the model at the origin, with a background color of purple, and then viewer should add default lighting and camera"] },  
   "items": [
     {
-      "id": "https://example.org/iiif/scene1/page/p1/1",
+      "id": "https://example.org/iiif/scene1",
       "type": "Scene",
       "label": { "en": ["A Scene"] },
       "backgroundColor": "#FF00FE",
@@ -24,7 +24,7 @@
                 "type": "Model",
                 "format": "model/gltf-binary"
               },
-              "target": "https://example.org/iiif/scene1/page/p1/1"
+              "target": "https://example.org/iiif/scene1"
             }
           ]
         }

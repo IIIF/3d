@@ -6,7 +6,7 @@
   "summary": { "en": ["Description TBA"] },
   "items": [
     {
-      "id": "https://example.org/iiif/scene1/page/p1/1",
+      "id": "https://example.org/iiif/scene1",
       "type": "Scene",
       "label": { "en": ["A Scene Containing a Whale Cranium and Mandible"] },
       "items": [
@@ -27,7 +27,7 @@
                 "type": "SpecificResource",
                 "source": [
                   {
-                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "id": "https://example.org/iiif/scene1",
                     "type": "Scene"
                   }
                 ],
@@ -54,7 +54,7 @@
                 "type": "SpecificResource",
                 "source": [
                   {
-                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "id": "https://example.org/iiif/scene1",
                     "type": "Scene"
                   }
                 ],

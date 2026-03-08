@@ -1,12 +1,12 @@
 {
   "@context": "http://iiif.io/api/presentation/4/context.json",
-  "id": "https://example.org/iiif/3d/model_origin.json",
+  "id": "https://example.org/iiif/3d/positioned_camera_lookat_point.json",
   "type": "Manifest",
   "label": { "en": ["Model with Explicit Perspective Camera Looking at a Point"] },
   "summary": { "en": ["Viewer should render the model at the scene origin with a perspective camera looking toward the PointSelector coordinates, and add default lighting"] },
   "items": [
     {
-      "id": "https://example.org/iiif/scene1/page/p1/1",
+      "id": "https://example.org/iiif/scene1",
       "type": "Scene",
       "label": { "en": ["Scene with a Model and Camera Looking at a Point"] },
 
@@ -24,7 +24,7 @@
                 "type": "Model",
                 "format": "model/gltf-binary"
               },
-              "target": "https://example.org/iiif/scene1/page/p1/1"
+              "target": "https://example.org/iiif/scene1"
             },
             {
               "id": "https://example.org/iiif/3d/anno2",
@@ -45,7 +45,7 @@
                 "type": "SpecificResource",
                 "source": [
                   {
-                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "id": "https://example.org/iiif/scene1",
                     "type": "Scene"
                   }
                 ],
