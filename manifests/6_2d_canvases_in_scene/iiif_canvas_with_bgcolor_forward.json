@@ -88,7 +88,7 @@
       "label": { "en": ["Painting"]},
       "backgroundColor": "#c0c0c0",
       "width": 1,
-	    "height": 1,
+	  "height": 1,
       "items": [
         {
           "id": "https://example.org/iiif/scene1/page/p2/1",
