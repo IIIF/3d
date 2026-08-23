@@ -2,13 +2,25 @@
   "@context": "http://iiif.io/api/presentation/4/context.json",
   "id": "https://example.org/iiif/3d/whale_comment_activating_annotation.json",
   "type": "Manifest",
-  "label": { "en": ["Whale Cranium and Mandible with Dynamic Commenting Annotations and Custom Per-Anno Views"] },
-  "summary": { "en": ["Description TBA"] },
+  "label": {
+    "en": [
+      "Whale Cranium and Mandible with Dynamic Commenting Annotations and Custom Per-Anno Views"
+    ]
+  },
+  "summary": {
+    "en": [
+      "Description TBA"
+    ]
+  },
   "items": [
     {
       "id": "https://example.org/iiif/scene1",
       "type": "Scene",
-      "label": { "en": ["A Scene Containing a Whale Cranium and Mandible"] },
+      "label": {
+        "en": [
+          "A Scene Containing a Whale Cranium and Mandible"
+        ]
+      },
       "items": [
         {
           "id": "https://example.org/iiif/scene1/page/p1/1",
@@ -17,7 +29,9 @@
             {
               "id": "https://example.org/iiif/3d/anno1",
               "type": "Annotation",
-              "motivation": ["painting"],
+              "motivation": [
+                "painting"
+              ],
               "body": {
                 "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/whale/whale_mandible.glb",
                 "type": "Model",
@@ -43,7 +57,9 @@
             {
               "id": "https://example.org/iiif/3d/anno2",
               "type": "Annotation",
-              "motivation": ["painting"],
+              "motivation": [
+                "painting"
+              ],
               "body": {
                 "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/whale/whale_cranium.glb",
                 "type": "Model",
@@ -69,15 +85,23 @@
             {
               "id": "https://example.org/iiif/3d/anno8",
               "type": "Annotation",
-              "motivation": ["painting"],
-              "behavior": ["hidden"],
+              "motivation": [
+                "painting"
+              ],
+              "behavior": [
+                "hidden"
+              ],
               "body": {
                 "id": "https://example.org/iiif/3d/anno8/body",
                 "type": "SpecificResource",
                 "source": {
                   "id": "https://example.org/iiif/3d/cameras/mandibular-tooth",
                   "type": "PerspectiveCamera",
-                  "label": {"en": ["Perspective Camera Pointed At Front of Cranium and Mandible"]},
+                  "label": {
+                    "en": [
+                      "Perspective Camera Pointed At Front of Cranium and Mandible"
+                    ]
+                  },
                   "fieldOfView": 50.0,
                   "near": 0.10,
                   "far": 2000.0
@@ -103,15 +127,23 @@
             {
               "id": "https://example.org/iiif/3d/anno6",
               "type": "Annotation",
-              "motivation": ["painting"],
-              "behavior": ["hidden"],
+              "motivation": [
+                "painting"
+              ],
+              "behavior": [
+                "hidden"
+              ],
               "body": {
                 "id": "https://example.org/iiif/3d/anno6/body",
                 "type": "SpecificResource",
                 "source": {
                   "id": "https://example.org/iiif/3d/cameras/hamulus",
                   "type": "PerspectiveCamera",
-                  "label": {"en": ["Perspective Camera Pointed At Pterygoid Hamulus"]},
+                  "label": {
+                    "en": [
+                      "Perspective Camera Pointed At Pterygoid Hamulus"
+                    ]
+                  },
                   "fieldOfView": 50.0,
                   "near": 0.10,
                   "far": 2000.0
@@ -144,99 +176,115 @@
             }
           ]
         }
-      ]
-    }
-  ],
-  "annotations": [
-    {
-      "id": "https://example.org/iiif/scene1/page/p1/annotations/1",
-      "type": "AnnotationPage",
-      "items": [
+      ],
+      "annotations": [
         {
-          "id": "https://example.org/iiif/3d/anno7",
-          "type": "Annotation",
-          "motivation": ["commenting"],
-          "body": {
-            "type": "TextualBody",
-            "value": "Mandibular tooth"
-          },
-          "target": {
-            "id": "https://example.org/iiif/3d/anno7/target",
-            "type": "SpecificResource",
-            "source": {
-              "id": "https://example.org/iiif/scene1",
-              "type": "Scene"
-            },
-            "selector": [
-              {
-                "type": "PointSelector",
-                "x": 0.011,
-                "y": 0.069,
-                "z": 0.231
+          "id": "https://example.org/iiif/scene1/page/p1/annotations/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/iiif/3d/anno7",
+              "type": "Annotation",
+              "motivation": [
+                "commenting"
+              ],
+              "body": {
+                "type": "TextualBody",
+                "value": "Mandibular tooth"
+              },
+              "target": {
+                "id": "https://example.org/iiif/3d/anno7/target",
+                "type": "SpecificResource",
+                "source": {
+                  "id": "https://example.org/iiif/scene1",
+                  "type": "Scene"
+                },
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 0.011,
+                    "y": 0.069,
+                    "z": 0.231
+                  }
+                ]
               }
-            ]
-          }
-        },
-        {
-          "id": "https://example.org/iiif/3d/anno5",
-          "type": "Annotation",
-          "motivation": ["commenting"],
-          "body": {
-            "type": "TextualBody",
-            "value": "Right pterygoid hamulus"
-          },
-          "target": {
-            "id": "https://example.org/iiif/3d/anno5/target",
-            "type": "SpecificResource",
-            "source": {
-              "id": "https://example.org/iiif/scene1",
-              "type": "Scene"
             },
-            "selector": [
-              {
-                "type": "PointSelector",
-                "x": 0.040,
-                "y": 0.063,
-                "z": -0.066
+            {
+              "id": "https://example.org/iiif/3d/anno5",
+              "type": "Annotation",
+              "motivation": [
+                "commenting"
+              ],
+              "body": {
+                "type": "TextualBody",
+                "value": "Right pterygoid hamulus"
+              },
+              "target": {
+                "id": "https://example.org/iiif/3d/anno5/target",
+                "type": "SpecificResource",
+                "source": {
+                  "id": "https://example.org/iiif/scene1",
+                  "type": "Scene"
+                },
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 0.040,
+                    "y": 0.063,
+                    "z": -0.066
+                  }
+                ]
               }
-            ]
-          }
-        },
-        {
-          "id": "https://example.org/iiif/3d/activating/tooth",
-          "type": "Annotation",
-          "motivation": ["activating"],
-          "target": {
-            "id": "https://example.org/iiif/3d/anno7",
-            "type": "Annotation"
-          },
-          "body": {
-            "id": "https://example.org/iiif/3d/activating/tooth/body",
-            "type": "SpecificResource",
-            "source": {
-              "id": "https://example.org/iiif/3d/anno8",
-              "type": "Annotation"
             },
-            "action": ["show", "enable", "select"]
-          }
-        },
-        {
-          "id": "https://example.org/iiif/3d/activating/hamulus",
-          "type": "Annotation",
-          "motivation": ["activating"],
-          "target": {
-            "id": "https://example.org/iiif/3d/anno5",
-            "type": "Annotation"
-          },
-          "body": {
-            "id": "https://example.org/iiif/3d/activating/hamulus/body",
-            "type": "SpecificResource",
-            "source": {
-              "id": "https://example.org/iiif/3d/anno6",
-              "type": "Annotation"
+            {
+              "id": "https://example.org/iiif/3d/activating/tooth",
+              "type": "Annotation",
+              "motivation": [
+                "activating"
+              ],
+              "target": {
+                "id": "https://example.org/iiif/3d/anno7",
+                "type": "Annotation"
+              },
+              "body": {
+                "id": "https://example.org/iiif/3d/activating/tooth/body",
+                "type": "SpecificResource",
+                "source": {
+                  "id": "https://example.org/iiif/3d/anno8",
+                  "type": "Annotation"
+                },
+                "action": [
+                  "show",
+                  "enable",
+                  "select"
+                ]
+              }
             },
-            "action": ["show", "enable", "select"]
-          }
+            {
+              "id": "https://example.org/iiif/3d/activating/hamulus",
+              "type": "Annotation",
+              "motivation": [
+                "activating"
+              ],
+              "target": {
+                "id": "https://example.org/iiif/3d/anno5",
+                "type": "Annotation"
+              },
+              "body": {
+                "id": "https://example.org/iiif/3d/activating/hamulus/body",
+                "type": "SpecificResource",
+                "source": {
+                  "id": "https://example.org/iiif/3d/anno6",
+                  "type": "Annotation"
+                },
+                "action": [
+                  "show",
+                  "enable",
+                  "select"
+                ]
+              }
+            }
+          ]
         }
       ]
     }

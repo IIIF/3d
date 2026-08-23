@@ -2,13 +2,25 @@
   "@context": "http://iiif.io/api/presentation/4/context.json",
   "id": "https://example.org/iiif/3d/astronaut_comment_activating_scope.json",
   "type": "Manifest",
-  "label": { "en": ["Single Model with Comment Annotations and Custom Views Per Annotation Using Activating Scope"] },
-  "summary": { "en": ["Viewer should render the model at the scene origin and two comment annotations, one targeting a point near the astronaut's glove and the other targeting a point near the astronaut's helmet. Each comment annotation has a specific camera position and view specified for it using scope."] },
+  "label": {
+    "en": [
+      "Single Model with Comment Annotations and Custom Views Per Annotation Using Activating Scope"
+    ]
+  },
+  "summary": {
+    "en": [
+      "Viewer should render the model at the scene origin and two comment annotations, one targeting a point near the astronaut's glove and the other targeting a point near the astronaut's helmet. Each comment annotation has a specific camera position and view specified for it using scope."
+    ]
+  },
   "items": [
     {
       "id": "https://example.org/iiif/scene1",
       "type": "Scene",
-      "label": { "en": ["A Scene"] },
+      "label": {
+        "en": [
+          "A Scene"
+        ]
+      },
       "items": [
         {
           "id": "https://example.org/iiif/scene1/page/p1/1",
@@ -17,7 +29,9 @@
             {
               "id": "https://example.org/iiif/3d/model",
               "type": "Annotation",
-              "motivation": ["painting"],
+              "motivation": [
+                "painting"
+              ],
               "body": {
                 "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/astronaut/astronaut.glb",
                 "type": "Model",
@@ -31,11 +45,17 @@
             {
               "id": "https://example.org/iiif/3d/cameras/1",
               "type": "Annotation",
-              "motivation": ["painting"],
+              "motivation": [
+                "painting"
+              ],
               "body": {
                 "id": "https://example.org/iiif/3d/cameras/1/body",
                 "type": "PerspectiveCamera",
-                "label": {"en": ["Default View"]},
+                "label": {
+                  "en": [
+                    "Default View"
+                  ]
+                },
                 "lookAt": {
                   "id": "https://example.org/uuid/1799e7d1-89a1-4e76-bcb9-3c0c47065598",
                   "type": "PointSelector",
@@ -65,11 +85,17 @@
             {
               "id": "https://example.org/iiif/3d/cameras/2",
               "type": "Annotation",
-              "motivation": ["painting"],
+              "motivation": [
+                "painting"
+              ],
               "body": {
                 "id": "https://example.org/iiif/3d/cameras/2/body",
                 "type": "PerspectiveCamera",
-                "label": {"en": ["Perspective Camera for Glove"]},
+                "label": {
+                  "en": [
+                    "Perspective Camera for Glove"
+                  ]
+                },
                 "lookAt": {
                   "id": "https://example.org/uuid/6799e7d1-89a1-4e76-bcb9-3c0c47065598",
                   "type": "PointSelector",
@@ -99,11 +125,17 @@
             {
               "id": "https://example.org/iiif/3d/cameras/3",
               "type": "Annotation",
-              "motivation": ["painting"],
+              "motivation": [
+                "painting"
+              ],
               "body": {
                 "id": "https://example.org/iiif/3d/cameras/3/body",
                 "type": "PerspectiveCamera",
-                "label": {"en": ["Perspective Camera for Helmet"]},
+                "label": {
+                  "en": [
+                    "Perspective Camera for Helmet"
+                  ]
+                },
                 "lookAt": {
                   "id": "https://example.org/uuid/80ace027-d43d-48f2-81dc-59bfed7b61cc",
                   "type": "PointSelector",
@@ -132,83 +164,91 @@
             }
           ]
         }
-      ]
-    }
-  ],
-  "annotations": [
-    {
-      "id": "https://example.org/iiif/scene1/page/p2/1",
-      "type": "AnnotationPage",
-      "items": [
+      ],
+      "annotations": [
         {
-          "id": "https://example.org/iiif/3d/comments/1",
-          "type": "Annotation",
-          "motivation": ["commenting"],
-          "body": {
-            "id": "https://example.org/iiif/3d/comments/1/body",
-            "type": "TextualBody",
-            "value": "Glove",
-            "language": ["en"],
-            "format": "text/plain"
-          },
-          "scope": [
+          "id": "https://example.org/iiif/scene1/page/p2/1",
+          "type": "AnnotationPage",
+          "items": [
             {
-              "id": "https://example.org/iiif/3d/cameras/2",
-              "type": "Annotation"
-            }
-          ],
-          "target": {
-            "id": "https://example.org/uuid/ab7f9b03-2c13-416c-85d8-13e4ef6d6a3b",
-            "type": "SpecificResource",
-            "source": {
-              "id": "https://example.org/iiif/scene1",
-              "type": "Scene"
-            },
-            "selector": [
-              {
-                "id": "https://example.org/uuid/bfa9c562-3480-4605-aa60-fff02a1d6716",
-                "type": "PointSelector",
-                "x": 1.075,
-                "y": 1.894,
-                "z": 0.204
+              "id": "https://example.org/iiif/3d/comments/1",
+              "type": "Annotation",
+              "motivation": [
+                "commenting"
+              ],
+              "body": {
+                "id": "https://example.org/iiif/3d/comments/1/body",
+                "type": "TextualBody",
+                "value": "Glove",
+                "language": [
+                  "en"
+                ],
+                "format": "text/plain"
+              },
+              "scope": [
+                {
+                  "id": "https://example.org/iiif/3d/cameras/2",
+                  "type": "Annotation"
+                }
+              ],
+              "target": {
+                "id": "https://example.org/uuid/ab7f9b03-2c13-416c-85d8-13e4ef6d6a3b",
+                "type": "SpecificResource",
+                "source": {
+                  "id": "https://example.org/iiif/scene1",
+                  "type": "Scene"
+                },
+                "selector": [
+                  {
+                    "id": "https://example.org/uuid/bfa9c562-3480-4605-aa60-fff02a1d6716",
+                    "type": "PointSelector",
+                    "x": 1.075,
+                    "y": 1.894,
+                    "z": 0.204
+                  }
+                ]
               }
-            ]
-          }
-        },
-        {
-          "id": "https://example.org/iiif/3d/comments/2",
-          "type": "Annotation",
-          "motivation": ["commenting"],
-          "body": {
-            "id": "https://example.org/iiif/3d/comments/2/body",
-            "type": "TextualBody",
-            "value": "Helmet",
-            "language": ["en"],
-            "format": "text/plain"
-          },
-          "scope": [
+            },
             {
-              "id": "https://example.org/iiif/3d/cameras/3",
-              "type": "Annotation"
-            }
-          ],
-          "target": {
-            "id": "https://example.org/uuid/8e6a68cd-a5be-4661-acc2-a373f2e749ae",
-            "type": "SpecificResource",
-            "source": {
-              "id": "https://example.org/iiif/scene1",
-              "type": "Scene"
-            },
-            "selector": [
-              {
-                "id": "https://example.org/uuid/7f940815-62f7-4d99-99e9-2f2a1ba0e7c8",
-                "type": "PointSelector",
-                "x": 0.006,
-                "y": 3.498,
-                "z": 0.703
+              "id": "https://example.org/iiif/3d/comments/2",
+              "type": "Annotation",
+              "motivation": [
+                "commenting"
+              ],
+              "body": {
+                "id": "https://example.org/iiif/3d/comments/2/body",
+                "type": "TextualBody",
+                "value": "Helmet",
+                "language": [
+                  "en"
+                ],
+                "format": "text/plain"
+              },
+              "scope": [
+                {
+                  "id": "https://example.org/iiif/3d/cameras/3",
+                  "type": "Annotation"
+                }
+              ],
+              "target": {
+                "id": "https://example.org/uuid/8e6a68cd-a5be-4661-acc2-a373f2e749ae",
+                "type": "SpecificResource",
+                "source": {
+                  "id": "https://example.org/iiif/scene1",
+                  "type": "Scene"
+                },
+                "selector": [
+                  {
+                    "id": "https://example.org/uuid/7f940815-62f7-4d99-99e9-2f2a1ba0e7c8",
+                    "type": "PointSelector",
+                    "x": 0.006,
+                    "y": 3.498,
+                    "z": 0.703
+                  }
+                ]
               }
-            ]
-          }
+            }
+          ]
         }
       ]
     }
