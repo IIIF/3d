@@ -1,0 +1,93 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "https://example.org/iiif/3d/model_origin.json",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "View of Astronaut's left glove"
+    ]
+  },
+  "summary": {
+    "en": [
+      "Camera defined by PointSelector resource in target and RotateTransform in annotation body. The camera will be oriented so that the glove fingers are horizontal on in 3D viewport"
+    ]
+  },
+  "items": [
+    {
+      "id": "https://example.org/iiif/scene1/page/p1/1",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Scene with a Model and Camera Looking at a Point"
+        ]
+      },
+      "items": [
+        {
+          "id": "https://example.org/iiif/scene1/page/p1/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/iiif/3d/anno1",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/astronaut/astronaut.glb",
+                "type": "Model"
+              },
+              "target": "https://example.org/iiif/scene1/page/p1/1"
+            },
+            {
+              "id": "https://example.org/iiif/3d/anno2",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "type": "SpecificResource",
+                "source": [
+                {
+                "id": "https://example.org/iiif/3d/cameras/1",
+                "type": "PerspectiveCamera",
+                "label": {
+                  "en": [
+                    "Perspective Camera 1"
+                    ]},
+                "fieldOfView" : 30.0
+                
+                }
+                ],
+                "transform": [
+                  {
+                    "type": "RotateTransform",
+                    "x": 90.0,
+                    "y": 90.0,
+                    "z": 0.0
+                  }
+                ]
+                },
+              "target": {
+                "type": "SpecificResource",
+                "source": [
+                  {
+                    "id": "https://example.org/iiif/scene1/page/p1/1",
+                    "type": "Scene"
+                  }
+                ],
+                "selector": [
+                  {
+                    "type": "PointSelector",
+                    "x": 2.356, 
+                    "y": 1.875,
+                    "z": 0.1167
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
